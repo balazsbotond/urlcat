@@ -1,5 +1,7 @@
 # urlcat - Build correct URL's easily
 
+[![Build Status](https://travis-ci.com/balazsbotond/urlcat.svg?branch=master)](https://travis-ci.com/balazsbotond/urlcat)
+
 ## What?
 
 ~~~js
