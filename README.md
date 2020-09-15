@@ -15,15 +15,15 @@ When I need to call an HTTP API, I usually need to add dynamic parameters to the
 const API_URL = 'https://api.example.com/';
 
 function getUserPosts(id, limit, offset) {
-  const requestUrl = \`\${API_URL}/users\${id}/posts?limit=\${limit}&offset=\${offset}\`;
+  const requestUrl = `${API_URL}/users${id}/posts?limit=${limit}&offset=${offset}`;
   // send HTTP request
 }
 ~~~
 
 As you can see, this minimal example is already rather hard to read. It is also incorrect:
 
-- I forgot that there was a trailing slash at the end of the \`API_URL\` constant so the slash got duplicated (\`https://api.example.com//users\`)
-- The embedded values need to be escaped using \`encodeURIComponent\`
+- I forgot that there was a trailing slash at the end of the `API_URL` constant so the slash got duplicated (`https://api.example.com//users`)
+- The embedded values need to be escaped using `encodeURIComponent`
 
 If I add escaping, it gets even more verbose:
 
@@ -34,7 +34,7 @@ function getUserPosts(id, limit, offset) {
   const escapedId = encodeURIComponent(id);
   const escapedLimit = encodeURIComponent(limit);
   const escapedOffset = encodeURIComponent(offset);
-  const requestUrl = \`\${API_URL}/users/\${escapedId}/posts?limit=\${escapedLimit}&offset=\${escapedOffset}\`;
+  const requestUrl = `${API_URL}/users/${escapedId}/posts?limit=${escapedLimit}&offset=${escapedOffset}`;
   // send HTTP request
 }
 ~~~
