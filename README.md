@@ -54,6 +54,10 @@ The library handles:
 - escaping all parameters
 - concatenating all parts (there will always be exactly one <kbd>/</kbd> and <kbd>?</kbd> character between them)
 
+## How to install
+
+(TODO)
+
 ## Typescript
 
 This library provides its own type definitions.
