@@ -12,7 +12,8 @@
     "prebuild:test": "npm run clean:test",
     "build:test": "tsc -p ./tsconfig-test.json",
     "pretest": "npm run build:test",
-    "test": "mocha 'dist-test/test/**/*.js'"
+    "test": "mocha 'dist-test/test/**/*.js'",
+    "prepublish": "npm test && npm run build"
   },
   "keywords": [
     "url",
