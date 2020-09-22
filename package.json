@@ -2,7 +2,8 @@
   "name": "urlcat",
   "version": "0.0.0",
   "description": "A library for concatenating URL's.",
-  "main": "index.js",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
     "clean": "shx rm -rf dist",
     "clean:test": "shx rm -rf dist-test",
