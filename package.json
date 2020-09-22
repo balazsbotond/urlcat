@@ -8,6 +8,9 @@
   },
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "clean": "shx rm -rf dist",
     "clean:test": "shx rm -rf dist-test",
