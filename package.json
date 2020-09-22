@@ -23,7 +23,7 @@
     "concatenate"
   ],
   "author": "Botond Balazs",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {},
   "devDependencies": {
     "@types/chai": "^4.2.12",
