@@ -1,0 +1,7 @@
+/node_modules
+/dist-test
+/src
+/test
+/.travis.yml
+/tsconfig.json
+/tsconfig-test.json
