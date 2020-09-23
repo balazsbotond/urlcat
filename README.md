@@ -1,10 +1,22 @@
+<h1 align="center">
+  <br>
+  <img src="docs/cat.svg" alt="Markdownify" width="200">
+  <br>
+  urlcat
+  <br>
+</h1>
+
+<h4 align="center">Build correct URLs easily.</h4>
+
 <p align="center">
-  <img src="docs/cat.svg">
+  <a href="https://travis-ci.com/balazsbotond/urlcat">
+    <img src="https://travis-ci.com/balazsbotond/urlcat.svg?branch=master"
+         alt="Build Status">
+  </a>
+  <a href="https://badge.fury.io/js/urlcat">
+    <img src="https://badge.fury.io/js/urlcat.svg" alt="npm version" height="18">
+  </a>
 </p>
-
-# urlcat - Build correct URL's easily
-
-[![Build Status](https://travis-ci.com/balazsbotond/urlcat.svg?branch=master)](https://travis-ci.com/balazsbotond/urlcat)
 
 ## What?
 
@@ -61,7 +73,9 @@ The library handles:
 
 ## How to Install
 
-(TODO)
+```bash
+npm install --save urlcat
+```
 
 ## Typescript
 
