@@ -18,6 +18,14 @@
   </a>
 </p>
 
+<p align="center">
+  <a href="#what">What?</a> •
+  <a href="#why">Why?</a> •
+  <a href="#how-to-install">How to Install</a> •
+  <a href="#typescript">Typescript</a> •
+  <a href="#api-documentation">API Docs</a> •
+</p>
+
 ## What?
 
 <p align="center">
