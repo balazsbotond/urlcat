@@ -34,13 +34,23 @@ export function query(params: ParamMap) {
     .join('&');
 }
 
+export function subst(template: string, params: ParamMap) {
+  const { renderedPath } = path(template, params);
+  return renderedPath;
+}
+
 function path(template: string, params: ParamMap) {
   const remainingParams = { ...params };
+
   const renderedPath = template.replace(/:\w+/g, p => {
     const key = p.slice(1);
+    if (!params.hasOwnProperty(key)) {
+      return p;
+    }
     delete remainingParams[key];
     return encodeURIComponent(params[key]);
   });
+
   return { renderedPath, remainingParams };
 }
 
