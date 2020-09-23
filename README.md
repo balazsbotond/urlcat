@@ -4,7 +4,7 @@
 
 ## What?
 
-![Basic Usage](docs/urlcat.svg)
+![Basic Usage](docs/urlcat-usage.svg)
 
 ## Why?
 
