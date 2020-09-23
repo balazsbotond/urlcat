@@ -23,7 +23,7 @@
   <a href="#why">Why?</a> •
   <a href="#how-to-install">How to Install</a> •
   <a href="#typescript">Typescript</a> •
-  <a href="#api-documentation">API Docs</a> •
+  <a href="#api-documentation">API Docs</a>
 </p>
 
 ## What?
