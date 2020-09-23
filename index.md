@@ -10,7 +10,11 @@
 
 ```js
 const API_URL = 'https://api.example.com/';
-const requestUrl = urlcat(API_URL, '/users/:id/comments', { id: 234, search: 'some text' });
+const requestUrl = urlcat(
+  API_URL,
+  '/users/:id/comments',
+  { id: 234, search: 'some text' }
+);
 // "https://api.example.com/users/345/comments?search=some%20text"
 const response = await fetch(requestUrl);
 ```
