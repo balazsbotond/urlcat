@@ -28,7 +28,7 @@ function urlcatImpl(baseUrl: string, pathTemplate: string, params: ParamMap) {
   return join(join(baseUrl, '/', renderedPath), '?', renderedQuery);
 }
 
-function query(params: ParamMap) {
+export function query(params: ParamMap) {
   return Object.entries(params)
     .map(([k, v]) => `${encodeURIComponent(k)}=${encodeURIComponent(v)}`)
     .join('&');
