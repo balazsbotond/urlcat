@@ -100,7 +100,23 @@ npm install --save urlcat
 
 ### Usage with Node
 
-(TODO)
+If you want to build full URLs (most common use case):
+
+```ts
+const urlcat = require('urlcat').default;
+```
+
+If you want to use any of the utility functions:
+
+```ts
+const { query, subst, join } = require('urlcat');
+```
+
+If you want to use everything:
+
+```ts
+const { default: urlcat, query, subst, join } = require('urlcat');
+```
 
 ### Usage with Typescript
 
