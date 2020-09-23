@@ -43,9 +43,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="2.0046794"
-     inkscape:cx="370.48697"
-     inkscape:cy="79.429296"
+     inkscape:zoom="8"
+     inkscape:cx="265.40243"
+     inkscape:cy="155.30181"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      inkscape:document-rotation="0"
@@ -68,7 +68,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -750,8 +750,7 @@
        id="path1197"
        sodipodi:nodetypes="cc" />
     <g
-       aria-label="Duplicate slashes
-are removed"
+       aria-label="Duplicate slashes are removed"
        id="text1201"
        style="font-size:3.88056px;line-height:0;font-family:Consolas;-inkscape-font-specification:Consolas;text-align:end;text-anchor:end;stroke-width:0.264583">
       <path
@@ -870,8 +869,7 @@ are removed"
          sodipodi:nodetypes="cc" />
     </g>
     <g
-       aria-label="Path params are
-substituted"
+       aria-label="Path params are substituted"
        id="text1201-0"
        style="font-size:3.88056px;line-height:0;font-family:Consolas;-inkscape-font-specification:Consolas;text-align:start;text-anchor:start;stroke-width:0.264583"
        transform="translate(0.13198287,2.1117259)">
@@ -973,9 +971,7 @@ substituted"
          id="path1381" />
     </g>
     <g
-       aria-label="Unused path
-params become
-query params"
+       aria-label="Unused path params become query params"
        id="text1201-0-7"
        style="font-size:3.88056px;line-height:0;font-family:Consolas;-inkscape-font-specification:Consolas;text-align:start;text-anchor:start;stroke-width:0.264583"
        transform="translate(0.7918972,-1.7157773)">
@@ -1113,8 +1109,7 @@ query params"
          id="path1487" />
     </g>
     <g
-       aria-label="All values
-are escaped"
+       aria-label="All values are escaped"
        id="text1201-0-3"
        style="font-size:3.88056px;line-height:0;font-family:Consolas;-inkscape-font-specification:Consolas;text-align:end;text-anchor:end;stroke-width:0.264583">
       <path
@@ -1208,5 +1203,73 @@ are escaped"
        height="4.0914693"
        x="88.262169"
        y="51.966251" />
+    <path
+       sodipodi:type="star"
+       style="fill:#008080;stroke:#008080;stroke-width:0.264583"
+       id="path291"
+       sodipodi:sides="3"
+       sodipodi:cx="105.0771"
+       sodipodi:cy="91.303258"
+       sodipodi:r1="0.93544328"
+       sodipodi:r2="0.71219689"
+       sodipodi:arg1="1.5707964"
+       sodipodi:arg2="2.6179939"
+       inkscape:flatsided="true"
+       inkscape:rounded="0"
+       inkscape:randomized="0"
+       d="m 105.0771,92.238704 -0.81011,-1.403165 1.62023,0 z"
+       inkscape:transform-center-x="0.067604172"
+       inkscape:transform-center-y="-0.017132321" />
+    <path
+       sodipodi:type="star"
+       style="fill:#008080;stroke:#008080;stroke-width:0.264583"
+       id="path291-4"
+       sodipodi:sides="3"
+       sodipodi:cx="136.1806"
+       sodipodi:cy="91.307266"
+       sodipodi:r1="0.93544328"
+       sodipodi:r2="0.71219689"
+       sodipodi:arg1="1.5707964"
+       sodipodi:arg2="2.6179939"
+       inkscape:flatsided="true"
+       inkscape:rounded="0"
+       inkscape:randomized="0"
+       d="m 136.1806,92.24271 -0.81011,-1.403165 1.62023,0 z"
+       inkscape:transform-center-x="0.067604172"
+       inkscape:transform-center-y="-0.017132321" />
+    <path
+       sodipodi:type="star"
+       style="fill:#008080;stroke:#008080;stroke-width:0.264583"
+       id="path291-4-1"
+       sodipodi:sides="3"
+       sodipodi:cx="156.57326"
+       sodipodi:cy="91.143568"
+       sodipodi:r1="0.93544328"
+       sodipodi:r2="0.71219689"
+       sodipodi:arg1="1.5707964"
+       sodipodi:arg2="2.6179939"
+       inkscape:flatsided="true"
+       inkscape:rounded="0"
+       inkscape:randomized="0"
+       d="m 156.57326,92.079013 -0.81012,-1.403165 1.62024,0 z"
+       inkscape:transform-center-x="0.067604172"
+       inkscape:transform-center-y="-0.017132321" />
+    <path
+       sodipodi:type="star"
+       style="fill:#008080;stroke:#008080;stroke-width:0.264583"
+       id="path291-4-1-4"
+       sodipodi:sides="3"
+       sodipodi:cx="87.828042"
+       sodipodi:cy="91.520035"
+       sodipodi:r1="0.93544328"
+       sodipodi:r2="0.71219689"
+       sodipodi:arg1="1.5707964"
+       sodipodi:arg2="2.6179939"
+       inkscape:flatsided="true"
+       inkscape:rounded="0"
+       inkscape:randomized="0"
+       d="m 87.828041,92.455478 -0.810118,-1.403165 1.620236,0 z"
+       inkscape:transform-center-x="0.067604172"
+       inkscape:transform-center-y="-0.017132321" />
   </g>
 </svg>
