@@ -32,7 +32,7 @@
 
 <br>
 <p align="center">
-  <img src="docs/urlcat-usage.svg">
+  <img src="docs/urlcat-basic-usage.svg">
 </p>
 
 Features:
