@@ -199,7 +199,7 @@ Builds a query string using the key-value pairs specified. Keys and values are e
 
 <table>
   <tr><th><code>params</code></th><th>result</th></tr>
-  <tr><td><code>{}</code></td><td><code>'42'</code></td></tr>
+  <tr><td><code>{}</code></td><td><code>''</code></td></tr>
   <tr><td><code>{ query: 'some text' }</code></td><td><code>'query=some%20text'</code></td></tr>
   <tr><td><code>{ id: 42, 'comment-id': 86 }</code></td><td><code>'id=42&comment-id=86'</code></td></tr>
   <tr><td><code>{ id: 42, 'a name': 'a value' }</code></td><td><code>'id=42&a%20name=a%20value'</code></td></tr>
