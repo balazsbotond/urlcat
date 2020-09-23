@@ -128,4 +128,36 @@ This library provides its own type definitions. "It just works", no need to inst
 
 ## API
 
-(TODO)
+### `ParamMap`: an object with string keys
+
+```ts
+type ParamMap = Record<string, any>;
+```
+
+For example, `{ firstParam: 1, 'second-param': 2 }` is a valid `ParamMap`.
+
+### `urlcat`: build full URLs
+
+```ts
+function urlcat(baseTemplate: string, params: ParamMap): string
+function urlcat(baseUrl: string, pathTemplate: string): string
+function urlcat(baseUrl: string, pathTemplate: string, params: ParamMap): string
+```
+
+### `query`: build query strings
+
+```ts
+function query(params: ParamMap): string
+```
+
+### `subst`: substitute path parameters
+
+```ts
+function subst(template: string, params: ParamMap): string
+```
+
+### `join`: join two strings using exactly one separator
+
+```ts
+function join(part1: string, separator: string, part2: string): string
+```
