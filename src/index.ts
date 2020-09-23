@@ -44,7 +44,7 @@ function path(template: string, params: ParamMap) {
   return { renderedPath, remainingParams };
 }
 
-function join(part1: string, separator: string, part2: string) {
+export function join(part1: string, separator: string, part2: string) {
   const p1 = part1.endsWith(separator) ? part1.slice(0, -separator.length) : part1;
   const p2 = part2.startsWith(separator) ? part2.slice(separator.length) : part2;
   return p1 === '' || p2 === ''
