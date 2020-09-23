@@ -4,7 +4,9 @@
 
 ## What?
 
-![Basic Usage](docs/urlcat-usage.svg)
+<p align="center">
+  <img src="docs/urlcat-usage.svg">
+</p>
 
 ## Why?
 
