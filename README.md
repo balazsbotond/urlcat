@@ -28,7 +28,7 @@
 
 ## What?
 
-*urlcat* is a tiny JavaScript library that makes building URL’s very convenient and prevents common mistakes.
+*urlcat* is a tiny JavaScript library that makes building URLs very convenient and prevents common mistakes.
 
 <br>
 <p align="center">
