@@ -21,9 +21,9 @@
 <p align="center">
   <a href="#what">What?</a> •
   <a href="#why">Why?</a> •
-  <a href="#how-to-install">How to Install</a> •
+  <a href="#how">How?</a> •
   <a href="#typescript">Typescript</a> •
-  <a href="#api-documentation">API Docs</a>
+  <a href="#api">API</a>
 </p>
 
 ## What?
@@ -88,7 +88,7 @@ The library handles:
 - escaping all parameters
 - concatenating all parts (there will always be exactly one <kbd>/</kbd> and <kbd>?</kbd> character between them)
 
-## How to Install
+## How?
 
 ```bash
 npm install --save urlcat
@@ -98,6 +98,6 @@ npm install --save urlcat
 
 This library provides its own type definitions. Just import and use it.
 
-## API Documentation
+## API
 
 (TODO)
