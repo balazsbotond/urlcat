@@ -28,9 +28,17 @@
 
 ## What?
 
+*urlcat* is a tiny JavaScript library that makes building URL’s very convenient and prevents common mistakes.
+
 <p align="center">
   <img src="docs/urlcat-usage.svg">
 </p>
+
+Features:
+- Friendly API
+- No dependencies
+- 0.6 KB minified and gzipped
+- Typescript types provided
 
 ## Why?
 
@@ -87,7 +95,7 @@ npm install --save urlcat
 
 ## Typescript
 
-This library provides its own type definitions.
+This library provides its own type definitions. Just import and use it.
 
 ## API Documentation
 
