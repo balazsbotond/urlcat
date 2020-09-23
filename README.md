@@ -25,7 +25,7 @@
   <a href="#typescript">Typescript</a> •
   <a href="#api">API</a> •
   <a href="#help">Help</a> •
-  <a href="#contribute">Contribute</a> •
+  <a href="#contribute">Contribute</a>
 </p>
 
 ## What?
