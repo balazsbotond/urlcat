@@ -30,6 +30,7 @@
 
 *urlcat* is a tiny JavaScript library that makes building URL’s very convenient and prevents common mistakes.
 
+<br>
 <p align="center">
   <img src="docs/urlcat-usage.svg">
 </p>
