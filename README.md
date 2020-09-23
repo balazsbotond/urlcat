@@ -139,9 +139,9 @@ For example, `{ firstParam: 1, 'second-param': 2 }` is a valid `ParamMap`.
 ### `urlcat`: build full URLs
 
 ```ts
-function urlcat(baseTemplate: string, params: ParamMap): string
-function urlcat(baseUrl: string, pathTemplate: string): string
 function urlcat(baseUrl: string, pathTemplate: string, params: ParamMap): string
+function urlcat(baseUrl: string, pathTemplate: string): string
+function urlcat(baseTemplate: string, params: ParamMap): string
 ```
 
 #### Examples
