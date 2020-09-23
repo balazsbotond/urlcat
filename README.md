@@ -90,13 +90,41 @@ The library handles:
 
 ## How?
 
+### Install
+
+Currently, the package is distributed via npm. Zip downloads and a CDN are coming soon.
+
 ```bash
 npm install --save urlcat
 ```
 
+### Usage with Node
+
+(TODO)
+
+### Usage with Typescript
+
+If you want to build full URLs (most common use case):
+
+```ts
+import urlcat from 'urlcat';
+```
+
+If you want to use any of the utility functions:
+
+```ts
+import { query, subst, join } from 'urlcat';
+```
+
+If you want to use everything:
+
+```ts
+import urlcat, { query, subst, join } from 'urlcat';
+```
+
 ## Typescript
 
-This library provides its own type definitions. Just import and use it.
+This library provides its own type definitions. "It just works", no need to install anything from `@types`.
 
 ## API
 
