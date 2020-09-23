@@ -1,6 +1,6 @@
 <h1 align="center">
   <br>
-  <img src="docs/cat.svg" alt="Markdownify" width="200">
+  <img src="docs/cat.svg" alt="Markdownify">
   <br>
   urlcat
   <br>
