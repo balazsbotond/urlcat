@@ -4,10 +4,7 @@
 
 ## What?
 
-~~~js
-> urlcat('https://api.example.com/', '/users/:id/comments', { id: 345, search: 'some text' })
-"https://api.example.com/users/345/comments?search=some%20text"
-~~~
+![Basic Usage](docs/urlcat.svg)
 
 ## Why?
 
