@@ -1,8 +1,10 @@
-## Welcome to GitHub Pages
+## `urlcat` - build correct URL's easily
 
-You can use the [editor on GitHub](https://github.com/balazsbotond/urlcat/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
+`urlcat` is a tiny JavaScript library that makes building URL's very convenient and prevents some common mistakes.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+- Friendly API
+- No dependencies
+- Typescript types provided
 
 ### Markdown
 
