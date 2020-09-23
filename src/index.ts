@@ -1,9 +1,9 @@
 export type ParamMap = Record<string, any>;
 
-export function urlcat(baseTemplate: string, params: ParamMap): string;
-export function urlcat(baseUrl: string, pathTemplate: string): string;
-export function urlcat(baseUrl: string, pathTemplate: string, params: ParamMap): string;
-export function urlcat(baseUrlOrTemplate: string, pathTemplateOrParams: string | ParamMap, maybeParams: ParamMap = {}): string {
+export default function urlcat(baseTemplate: string, params: ParamMap): string;
+export default function urlcat(baseUrl: string, pathTemplate: string): string;
+export default function urlcat(baseUrl: string, pathTemplate: string, params: ParamMap): string;
+export default function urlcat(baseUrlOrTemplate: string, pathTemplateOrParams: string | ParamMap, maybeParams: ParamMap = {}): string {
   let baseUrl: string;
   let pathTemplate: string;
   let params: ParamMap;

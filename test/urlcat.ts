@@ -1,4 +1,4 @@
-import { urlcat } from '../src';
+import urlcat from '../src';
 import { expect } from 'chai';
 
 describe('urlcat', () => {
