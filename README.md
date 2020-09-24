@@ -104,7 +104,7 @@ npm install --save urlcat
 
 ### Usage with Node
 
-Node 10 and above are officially supported (though you are encouraged to try on older versions).
+Node 10 and above are officially supported. Since the code uses the `URL` and `URLSearchParams` classes internally, which aren't available below v10, we cannot support those versions.
 
 If you want to build full URLs (most common use case):
 
