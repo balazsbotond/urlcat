@@ -63,10 +63,12 @@ export function join(part1: string, separator: string, part2: string) {
 }
 
 function removeNullOrUndef(params: ParamMap) {
-  return Object.fromEntries(
-    Object.entries(params)
-      .filter(([_, v]) => notNullOrUndefined(v))
-  );
+  return Object.keys(params)
+    .filter(k => notNullOrUndefined(params[k]))
+    .reduce((result, k) => {
+      result[k] = params[k];
+      return result;
+    }, {} as ParamMap);
 }
 
 function notNullOrUndefined(v: any) {
