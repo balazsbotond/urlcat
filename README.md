@@ -50,8 +50,8 @@ When I need to call an HTTP API, I usually need to add dynamic parameters to the
 ~~~js
 const API_URL = 'https://api.example.com/';
 
-function getUserPosts(id, limit, offset) {
-  const requestUrl = `${API_URL}/users${id}/posts?limit=${limit}&offset=${offset}`;
+function getUserPosts(id, blogId, limit, offset) {
+  const requestUrl = `${API_URL}/users/${id}/blogs/${blogId}/posts?limit=${limit}&offset=${offset}`;
   // send HTTP request
 }
 ~~~
@@ -61,16 +61,18 @@ As you can see, this minimal example is already rather hard to read. It is also 
 - I forgot that there was a trailing slash at the end of the `API_URL` constant so the slash got duplicated (`https://api.example.com//users`)
 - The embedded values need to be escaped using `encodeURIComponent`
 
-If I add escaping, it gets even more verbose:
+I can use the built-in `URL` class to prevent duplicate slashes and `URLSearchParams` to escape the query string. But I still need to escape all path parameters manually.
 
 ~~~js
-const API_URL = 'https://api.example.com';
+const API_URL = 'https://api.example.com/';
 
-function getUserPosts(id, limit, offset) {
+function getUserPosts(id, blogId, limit, offset) {
   const escapedId = encodeURIComponent(id);
-  const escapedLimit = encodeURIComponent(limit);
-  const escapedOffset = encodeURIComponent(offset);
-  const requestUrl = `${API_URL}/users/${escapedId}/posts?limit=${escapedLimit}&offset=${escapedOffset}`;
+  const escapedBlogId = encodeURIComponent(blogId);
+  const path = `/users/${escapedId}/blogs/${escapedBlogId}`;
+  const url = new URL(path, API_URL);
+  url.search = new URLSearchParams({ limit, offset });
+  const requestUrl = url.href;
   // send HTTP request
 }
 ~~~
@@ -78,7 +80,7 @@ function getUserPosts(id, limit, offset) {
 Such a simple task and yet very hard to read and tedious to write! This is why I made this tiny library:
 
 ~~~js
-const API_URL = 'https://api.example.com';
+const API_URL = 'https://api.example.com/';
 
 function getUserPosts(id, limit, offset) {
   const requestUrl = urlcat(API_URL, '/users/:id/posts', { id, limit, offset });
