@@ -13,8 +13,8 @@
     <img src="https://travis-ci.com/balazsbotond/urlcat.svg?branch=master"
          alt="Build Status">
   </a>
-  <a href="https://badge.fury.io/js/urlcat">
-    <img src="https://badge.fury.io/js/urlcat.svg" alt="npm version" height="18">
+  <a href="https://www.npmjs.com/package/urlcat">
+    <img src="https://img.shields.io/npm/v/react.svg?style=flat" alt="npm version">
   </a>
 </p>
 
