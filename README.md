@@ -124,6 +124,8 @@ const { default: urlcat, query, subst, join } = require('urlcat');
 
 ### Usage with Typescript
 
+Typescript 2.1 and above are officially supported.
+
 If you want to build full URLs (most common use case):
 
 ```ts
