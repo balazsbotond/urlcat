@@ -85,4 +85,16 @@ describe('urlcat', () => {
     expect(actual).to.equal(expected);
   });
 
+  it ('Provides an overload (baseUrl, pathTemplate) that works correctly', () => {
+    const expected = 'http://example.com/path';
+    const actual = urlcat('http://example.com/', '/path');
+    expect(actual).to.equal(expected);
+  });
+
+  it ('Provides an overload (baseTemplate, params) that works correctly', () => {
+    const expected = 'http://example.com/path/a%20b?q=b+c';
+    const actual = urlcat('http://example.com/path/:p', { p: 'a b', q: 'b c' });
+    expect(actual).to.equal(expected);
+  });
+
 });

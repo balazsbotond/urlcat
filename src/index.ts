@@ -4,24 +4,19 @@ export default function urlcat(baseTemplate: string, params: ParamMap): string;
 export default function urlcat(baseUrl: string, pathTemplate: string): string;
 export default function urlcat(baseUrl: string, pathTemplate: string, params: ParamMap): string;
 export default function urlcat(baseUrlOrTemplate: string, pathTemplateOrParams: string | ParamMap, maybeParams: ParamMap = {}): string {
-  let baseUrl: string;
-  let pathTemplate: string;
-  let params: ParamMap;
-
   if (typeof pathTemplateOrParams === 'string') {
-    baseUrl = baseUrlOrTemplate;
-    pathTemplate = pathTemplateOrParams;
-    params = maybeParams;
+    const baseUrl = baseUrlOrTemplate;
+    const pathTemplate = pathTemplateOrParams;
+    const params = maybeParams;
+    return urlcatImpl(pathTemplate, params, baseUrl);
   } else {
-    baseUrl = '';
-    pathTemplate = baseUrlOrTemplate;
-    params = pathTemplateOrParams;
+    const baseTemplate = baseUrlOrTemplate;
+    const params = pathTemplateOrParams;
+    return urlcatImpl(baseTemplate, params);
   }
-
-  return urlcatImpl(baseUrl, pathTemplate, params);
 }
 
-function urlcatImpl(baseUrl: string, pathTemplate: string, params: ParamMap) {
+function urlcatImpl(pathTemplate: string, params: ParamMap, baseUrl?: string) {
   const cleanParams = removeNullOrUndef(params);
   const { renderedPath, remainingParams } = path(pathTemplate, cleanParams);
   const url = new URL(renderedPath, baseUrl);
