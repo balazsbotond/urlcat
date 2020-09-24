@@ -24,14 +24,13 @@ export default function urlcat(baseUrlOrTemplate: string, pathTemplateOrParams: 
 function urlcatImpl(baseUrl: string, pathTemplate: string, params: ParamMap) {
   const cleanParams = removeNullOrUndef(params);
   const { renderedPath, remainingParams } = path(pathTemplate, cleanParams);
-  const renderedQuery = query(remainingParams);
-  return join(join(baseUrl, '/', renderedPath), '?', renderedQuery);
+  const url = new URL(renderedPath, baseUrl);
+  url.search = query(remainingParams);
+  return url.href;
 }
 
 export function query(params: ParamMap) {
-  return Object.entries(params)
-    .map(([k, v]) => `${encodeURIComponent(k)}=${encodeURIComponent(v)}`)
-    .join('&');
+  return new URLSearchParams(params).toString();
 }
 
 export function subst(template: string, params: ParamMap) {

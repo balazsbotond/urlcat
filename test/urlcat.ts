@@ -3,12 +3,6 @@ import { expect } from 'chai';
 
 describe('urlcat', () => {
 
-  it('returns empty string if all arguments are empty', () => {
-    const expected = '';
-    const actual = urlcat('', '');
-    expect(actual).to.equal(expected);
-  });
-
   it ('Concatenates the base URL and the path if no params are passed', () => {
     const expected = 'http://example.com/path';
     const actual = urlcat('http://example.com', 'path');
@@ -30,18 +24,6 @@ describe('urlcat', () => {
   it ('Uses exactly one slash for joining even if the base URL and the path both have a slash at the boundary', () => {
     const expected = 'http://example.com/path';
     const actual = urlcat('http://example.com/', '/path');
-    expect(actual).to.equal(expected);
-  });
-
-  it ('Removes trailing slash from the base URL if the path is empty', () => {
-    const expected = 'http://example.com';
-    const actual = urlcat('http://example.com/', '');
-    expect(actual).to.equal(expected);
-  });
-
-  it ('Removes leading slash from the path if the base URL is empty', () => {
-    const expected = 'path';
-    const actual = urlcat('', '/path');
     expect(actual).to.equal(expected);
   });
 
@@ -88,7 +70,7 @@ describe('urlcat', () => {
   });
 
   it ('Escapes both path and query parameters', () => {
-    const expected = 'http://example.com/path/a%20b?q=b%20c';
+    const expected = 'http://example.com/path/a%20b?q=b+c';
     const actual = urlcat('http://example.com/', '/path/:p', { p: 'a b', q: 'b c' });
     expect(actual).to.equal(expected);
   });
