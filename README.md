@@ -173,23 +173,23 @@ function urlcat(baseTemplate: string, params: ParamMap): string
 <ul>
   <li>
     <code>urlcat('https://api.example.com', '/users/:id/posts', { id: 123, limit: 10, offset: 120 })</code><br>
-    ⮡ <code>'https://api.example.com/users/123/posts?limit=10&offset=120'</code>
+    → <code>'https://api.example.com/users/123/posts?limit=10&offset=120'</code>
   </li>
   <li>
     <code>urlcat('http://example.com/', '/posts/:title', { title: 'Letters & "Special" Characters' })</code><br>
-    ⮡ <code>'http://example.com/posts/Letters%20%26%20%22Special%22%20Characters'</code>
+    → <code>'http://example.com/posts/Letters%20%26%20%22Special%22%20Characters'</code>
   </li>
   <li>
     <code>urlcat('https://api.example.com', '/users')</code><br>
-    ⮡ <code>'https://api.example.com/users'</code>
+    → <code>'https://api.example.com/users'</code>
   </li>
   <li>
     <code>urlcat('https://api.example.com/', '/users')</code><br>
-    ⮡ <code>'https://api.example.com/users'</code>
+    → <code>'https://api.example.com/users'</code>
   </li>
   <li>
     <code>urlcat('http://example.com/', '/users/:userId/posts/:postId/comments', { userId: 123, postId: 987, authorId: 456, limit: 10, offset: 120 })</code><br>
-    ⮡ <code>'http://example.com/users/123/posts/987/comments?authorId=456&limit=10&offset=120'</code>
+    → <code>'http://example.com/users/123/posts/987/comments?authorId=456&limit=10&offset=120'</code>
   </li>
 </ul>
 
