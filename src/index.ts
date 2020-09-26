@@ -19,9 +19,11 @@ export default function urlcat(baseUrlOrTemplate: string, pathTemplateOrParams: 
 function urlcatImpl(pathTemplate: string, params: ParamMap, baseUrl?: string) {
   const cleanParams = removeNullOrUndef(params);
   const { renderedPath, remainingParams } = path(pathTemplate, cleanParams);
-  const url = new URL(renderedPath, baseUrl);
-  url.search = query(remainingParams);
-  return url.href;
+  const renderedQuery = query(remainingParams);
+  const pathAndQuery = join(renderedPath, '?', renderedQuery);
+  return baseUrl
+    ? join(baseUrl, '/', pathAndQuery)
+    : pathAndQuery;
 }
 
 export function query(params: ParamMap) {
