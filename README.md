@@ -22,7 +22,7 @@
   <a href="#what">What?</a> •
   <a href="#why">Why?</a> •
   <a href="#how">How?</a> •
-  <a href="#typescript">Typescript</a> •
+  <a href="#typescript">TypeScript</a> •
   <a href="#api">API</a> •
   <a href="#help">Help</a> •
   <a href="#contribute">Contribute</a>
@@ -41,7 +41,7 @@ Features:
 - Friendly API
 - No dependencies
 - 0.6 KB minified and gzipped
-- Typescript types provided
+- TypeScript types provided
 
 ## Why?
 
@@ -124,9 +124,9 @@ If you want to use everything:
 const { default: urlcat, query, subst, join } = require('urlcat');
 ```
 
-### Usage with Typescript
+### Usage with TypeScript
 
-Typescript 2.1 and above are officially supported.
+TypeScript 2.1 and above are officially supported.
 
 If you want to build full URLs (most common use case):
 
@@ -146,7 +146,7 @@ If you want to use everything:
 import urlcat, { query, subst, join } from 'urlcat';
 ```
 
-## Typescript
+## TypeScript
 
 This library provides its own type definitions. "It just works", no need to install anything from `@types`.
 
