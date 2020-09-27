@@ -73,5 +73,7 @@ function removeNullOrUndef(params: ParamMap) {
 }
 
 function notNullOrUndefined(v: any) {
+  if (v === null || v === undefined) throw new TypeError(`Path parameter ${v} is not Valid`);
+
   return v !== undefined && v !== null;
 }
