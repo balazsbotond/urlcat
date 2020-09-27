@@ -37,6 +37,7 @@ export function subst(template: string, params: ParamMap) {
 
 function path(template: string, params: ParamMap) {
   const remainingParams = { ...params };
+  const allowedTypes = ["boolean", "string", "number"];
 
   const renderedPath = template.replace(/:\w+/g, p => {
     const key = p.slice(1);
@@ -44,6 +45,10 @@ function path(template: string, params: ParamMap) {
       return p;
     }
     delete remainingParams[key];
+
+    if (!allowedTypes.includes(typeof params[key])) {
+      throw new TypeError(`Path parameter ${key} cannot be of type ${typeof params[key]}. Allowed types are: ${allowedTypes.join(', ')}.`);
+    }
     return encodeURIComponent(params[key]);
   });
 
