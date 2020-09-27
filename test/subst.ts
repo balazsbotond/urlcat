@@ -64,14 +64,17 @@ describe('subst', () => {
   });
 
   it('Not Allowed Type Array should not be rendered', () => {
-    expect(() => subst(':p', { p: [] })).to.throw(TypeError, "Path parameter p cannot be of type object.Allowed types are: boolean, string, number.");
+    expect(() => subst(':p', { p: [] }))
+      .to.throw(TypeError, "Path parameter p cannot be of type object. Allowed types are: boolean, string, number.");
   });
 
   it('Not Allowed Type Object should not be rendered', () => {
-    expect(() => subst(':p', { p: {} })).to.throw(TypeError, "Path parameter p cannot be of type object.Allowed types are: boolean, string, number.");
+    expect(() => subst(':p', { p: {} }))
+      .to.throw(TypeError, "Path parameter p cannot be of type object. Allowed types are: boolean, string, number.");
   });
 
   it('Not Allowed Type Symbol should not be rendered', () => {
-    expect(() => subst(':p', { p: Symbol() })).to.throw(TypeError, "Path parameter p cannot be of type symbol.Allowed types are: boolean, string, number.");
+    expect(() => subst(':p', { p: Symbol() }))
+      .to.throw(TypeError, "Path parameter p cannot be of type symbol. Allowed types are: boolean, string, number.");
   });
 });

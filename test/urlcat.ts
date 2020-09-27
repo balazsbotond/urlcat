@@ -46,8 +46,8 @@ describe('urlcat', () => {
   });
 
   it('Uses exactly one ? to join query parameters even if the path has a trailing question mark', () => {
-    const expected = 'http://example.com/path?q=true';
-    const actual = urlcat('http://example.com/', '/path?', { q: true });
+    const expected = 'http://example.com/path?q=2';
+    const actual = urlcat('http://example.com/', '/path?', { q: 2 });
     expect(actual).to.equal(expected);
   });
 
@@ -129,27 +129,18 @@ describe('urlcat', () => {
   });
 
   it('Can\'t handle object as param', () => {
-    expect(() => urlcat('http://example.com/path/:p', { p: {} })).to.throw(TypeError, "Path parameter p cannot be of type object.Allowed types are: boolean, string, number.");
+    expect(() => urlcat('http://example.com/path/:p', { p: {} }))
+      .to.throw(TypeError, "Path parameter p cannot be of type object. Allowed types are: boolean, string, number.");
   });
 
   it('Can\'t handle array as param', () => {
-    expect(() => urlcat('http://example.com/path/:p/:q', { p: [] })).to.throw(TypeError, "Path parameter p cannot be of type object.Allowed types are: boolean, string, number.");
+    expect(() => urlcat('http://example.com/path/:p/:q', { p: [] }))
+      .to.throw(TypeError, "Path parameter p cannot be of type object. Allowed types are: boolean, string, number.");
   });
 
   it('Can\'t handle symbol as param', () => {
-    expect(() => urlcat('http://example.com/path/:p', { p: Symbol() })).to.throw(TypeError, "Path parameter p cannot be of type symbol.Allowed types are: boolean, string, number.");
-  });
-
-  it('Can\'t handle null as param', () => {
-    expect(() => urlcat('http://example.com/path/:p', { p: null })).to.throw(TypeError, "Path parameter null is not Valid");
-  });
-
-  it('Can\'t handle null as second param', () => {
-    expect(() => urlcat('http://example.com/path/:p/:q', { p: 'test', q: null })).to.throw(TypeError, "Path parameter null is not Valid");
-  });
-
-  it('Can\'t handle undefined as param', () => {
-    expect(() => urlcat('http://example.com/path/:p', { p: undefined })).to.throw(TypeError, "Path parameter undefined is not Valid");
+    expect(() => urlcat('http://example.com/path/:p', { p: Symbol() }))
+      .to.throw(TypeError, "Path parameter p cannot be of type symbol. Allowed types are: boolean, string, number.");
   });
 
 });
