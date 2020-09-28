@@ -19,6 +19,9 @@
   <a href="https://bundlephobia.com/result?p=urlcat">
     <img src="https://badgen.net/bundlephobia/minzip/urlcat" alt="minzipped size">
   </a>
+  <a href="https://coveralls.io/github/balazsbotond/urlcat?branch=master">
+    <img src="https://coveralls.io/repos/github/balazsbotond/urlcat/badge.svg?branch=master" alt="Coverage Status" />
+  </a>
 </p>
 
 <p align="center">
