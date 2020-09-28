@@ -47,7 +47,10 @@ function path(template: string, params: ParamMap) {
     delete remainingParams[key];
 
     if (!allowedTypes.includes(typeof params[key])) {
-      throw new TypeError(`Path parameter ${key} cannot be of type ${typeof params[key]}. Allowed types are: ${allowedTypes.join(', ')}.`);
+      throw new TypeError(
+        `Path parameter ${key} cannot be of type ${typeof params[key]}. ` +
+        `Allowed types are: ${allowedTypes.join(', ')}.`
+      );
     }
     return encodeURIComponent(params[key]);
   });
