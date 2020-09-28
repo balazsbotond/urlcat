@@ -7,5 +7,6 @@ node_js:
   - 11
   - 10
 script:
+  - npm run lint
   - npm test
   - npm run coverage
