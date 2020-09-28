@@ -16,6 +16,9 @@
   <a href="https://www.npmjs.com/package/urlcat">
     <img src="https://img.shields.io/npm/v/urlcat.svg?style=flat" alt="npm version">
   </a>
+  <a href="https://bundlephobia.com/result?p=urlcat">
+    <img src="https://badgen.net/bundlephobia/minzip/urlcat" alt="minzipped size">
+  </a>
 </p>
 
 <p align="center">
