@@ -6,3 +6,5 @@
 /.travis.yml
 /tsconfig.json
 /tsconfig-test.json
+/.nyc_output
+/coverage
