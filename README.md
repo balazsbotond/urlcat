@@ -200,6 +200,10 @@ function urlcat(baseTemplate: string, params: ParamMap): string
   </li>
 </ul>
 
+**NOTE about empty path segments:** [RFC 1234](http://example.com) allows empty path segments in URLs (for example, `https://example.com//users////2`). *urlcat* keeps any empty path segments that aren't at the concatenation boundary between `baseUrl` and `pathTemplate`. If you need to include an empty path segment there, you have two options:
+- use a double slash: `urlcat('https://example.com/', '//users', { q: 1 })` → `https://example.com//users?q=1`
+- use the `baseTemplate` overload: `urlcat('https://example.com//users', { q: 1 })` → `https://example.com//users?q=1`
+
 ### `query`: build query strings
 
 ```ts
