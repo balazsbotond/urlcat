@@ -6,7 +6,8 @@ export type ParamMap = Record<string, any>;
  * @param {String} baseTemplate a URL template that contains zero or more :params
  * @param {Object} params an object with properties that correspond to the :params
  *   in the base template. Unused properties become query params.
- * @returns a URL with path params substituted and query params appended
+ * 
+ * @returns {String} a URL with path params substituted and query params appended
  *
  * @example
  * ```ts
@@ -17,12 +18,13 @@ export type ParamMap = Record<string, any>;
 export default function urlcat(baseTemplate: string, params: ParamMap): string;
 
 /**
- * Concatenates the base URL and the path specified using '/' as a separator such
- * that if a '/' occurs at the concatenation boundary in either parameter, it is removed.
+ * Concatenates the base URL and the path specified using '/' as a separator.
+ * If a '/' occurs at the concatenation boundary in either parameter, it is removed.
  *
- * @param {String} baseUrl the first part of the URL
- * @param {String} path the second part of the URL
- * @returns {String} the result of the concatenation
+ * @param {String} baseUrl Base URL
+ * @param {String} path Path of URL or query :params
+ * 
+ * @returns {String} Concatenated URL
  *
  * @example
  * ```ts
@@ -33,16 +35,17 @@ export default function urlcat(baseTemplate: string, params: ParamMap): string;
 export default function urlcat(baseUrl: string, path: string): string;
 
 /**
- * Concatenates the base URL and the path specified using '/' as a separator such
- * that if a '/' occurs at the concatenation boundary in either parameter, it is removed.
+ * Concatenates the base URL and the path specified using '/' as a separator.
+ * If a '/' occurs at the concatenation boundary in either parameter, it is removed.
  * Substitutes path parameters with the properties of the @see params object and appends
  * properties unused in the path as query params.
  *
- * @param {String} baseUrl the first part of the URL
- * @param {String} path the second part of the URL
- * @param {Object} params an object with properties that correspond to the :params
+ * @param {String} baseUrl Base URL
+ * @param {String} path Path of URL or query :params
+ * @param {Object} params Object with properties that correspond to the :params
  *   in the base template. Unused properties become query params.
- * @returns {String} a URL with path params substituted and query params appended
+ * 
+ * @returns {String} URL with path params substituted and query params appended
  *
  * @example
  * ```ts
@@ -79,7 +82,8 @@ function urlcatImpl(pathTemplate: string, params: ParamMap, baseUrl?: string) {
  * Creates a query string from the object specified.
  *
  * @param {Object} params an object to convert into a query string.
- * @returns {String} a query string.
+ * 
+ * @returns {String} Query string.
  *
  * @example
  * ```ts
@@ -96,7 +100,8 @@ export function query(params: ParamMap): string {
  *
  * @param {String} template a string that contains :params.
  * @param {Object} params on object with keys that correspond to the params in the template.
- * @returns {String}
+ * 
+ * @returns {String} Rendering path after substitution .
  *
  * @example
  * ```ts
@@ -109,6 +114,13 @@ export function subst(template: string, params: ParamMap): string {
   return renderedPath;
 }
 
+/**
+ * Creates the path and path :params
+ * @param {String} template a string that contains :params.
+ * @param {Object} params on object with keys that correspond to the params in the template.
+ * 
+ * @returns {String, String} Rendering path and rendering :params.
+ */
 function path(template: string, params: ParamMap) {
   const remainingParams = { ...params };
   const allowedTypes = ["boolean", "string", "number"];
@@ -133,14 +145,15 @@ function path(template: string, params: ParamMap) {
 }
 
 /**
- * Joins two strings using a separator. If the separator occurs at the concatenation
- * boundary in either of the strings, it is removed. This prevents accidental duplication
- * of the separator.
+ * Joins two strings using a separator. 
+ * If the separator occurs at the concatenation boundary in either parameter, it is removed.
  *
- * @param {String} part1 the first string to join.
- * @param {String} separator the separator to use for joining.
- * @param {String} part2 the second string to join.
+ * @param {String} part1 First string.
+ * @param {String} separator Separator used for joining.
+ * @param {String} part2 Second string.
  *
+ * @returns {String} Joined string.
+ * 
  * @example
  * ```ts
  * join('first/', '/', '/second')
@@ -148,13 +161,21 @@ function path(template: string, params: ParamMap) {
  * ```
  */
 export function join(part1: string, separator: string, part2: string) {
-  const p1 = part1.endsWith(separator) ? part1.slice(0, -separator.length) : part1;
-  const p2 = part2.startsWith(separator) ? part2.slice(separator.length) : part2;
-  return p1 === '' || p2 === ''
-    ? p1 + p2
-    : p1 + separator + p2;
+  const p1 = part1.endsWith(separator)
+    ? part1.slice(0, -separator.length)
+    : part1;
+  const p2 = part2.startsWith(separator)
+    ? part2.slice(separator.length)
+    : part2;
+  return p1 === "" || p2 === "" ? p1 + p2 : p1 + separator + p2;
 }
 
+/**
+ * Removes Null and undefined :params.
+ * @param params Object consisting of :params
+ * 
+ * @returns {Object} Object of :params after removing Null and undefined values
+ */
 function removeNullOrUndef(params: ParamMap) {
   return Object.keys(params)
     .filter(k => notNullOrUndefined(params[k]))
@@ -164,6 +185,13 @@ function removeNullOrUndef(params: ParamMap) {
     }, {} as ParamMap);
 }
 
+/**
+ * Checks whether :param is Null  or undefined.
+ * @param v {any} :param
+ * 
+ * @returns {Boolean} true -> :param is not Null or not undefined
+ * @returns {Boolean} false -> :param is Null or undefined
+ */
 function notNullOrUndefined(v: any) {
   return v !== undefined && v !== null;
 }
