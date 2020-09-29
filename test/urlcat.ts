@@ -143,4 +143,19 @@ describe('urlcat', () => {
       .to.throw(TypeError, "Path parameter p cannot be of type symbol. Allowed types are: boolean, string, number.");
   });
 
+  it('Can\'t handle undefined as param', () => {
+    expect(() => urlcat('http://example.com/path/:p', { p: undefined }))
+      .to.throw(TypeError, "Path parameter p cannot be of type undefined. Allowed types are: boolean, string, number.");
+  });
+
+  it('Can\'t handle null as param', () => {
+    expect(() => urlcat('http://example.com/path/:p', { p: null }))
+      .to.throw(TypeError, "Path parameter p cannot be of type object. Allowed types are: boolean, string, number.");
+  });
+
+  it('Can\'t handle blank as param', () => {
+    expect(() => urlcat('http://example.com/path/:p', { p: " " }))
+      .to.throw(TypeError, "Path parameter p cannot be of type string. Allowed types are: boolean, string, number.");
+  });
+
 });

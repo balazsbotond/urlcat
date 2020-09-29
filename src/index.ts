@@ -66,9 +66,9 @@ export default function urlcat(baseUrlOrTemplate: string, pathTemplateOrParams: 
 }
 
 function urlcatImpl(pathTemplate: string, params: ParamMap, baseUrl?: string) {
-  const cleanParams = removeNullOrUndef(params);
-  const { renderedPath, remainingParams } = path(pathTemplate, cleanParams);
-  const renderedQuery = query(remainingParams);
+  const { renderedPath, remainingParams } = path(pathTemplate, params);
+  const cleanParams = removeNullOrUndef(remainingParams);
+  const renderedQuery = query(cleanParams);
   const pathAndQuery = join(renderedPath, '?', renderedQuery);
   return baseUrl
     ? join(baseUrl, '/', pathAndQuery)
@@ -120,7 +120,7 @@ function path(template: string, params: ParamMap) {
     }
     delete remainingParams[key];
 
-    if (!allowedTypes.includes(typeof params[key])) {
+    if (!allowedTypes.includes(typeof params[key]) || typeof params[key] === "string" && params[key].trim().length <= 0) {
       throw new TypeError(
         `Path parameter ${key} cannot be of type ${typeof params[key]}. ` +
         `Allowed types are: ${allowedTypes.join(', ')}.`
