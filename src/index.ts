@@ -6,7 +6,7 @@ export type ParamMap = Record<string, any>;
  * @param {String} baseTemplate a URL template that contains zero or more :params
  * @param {Object} params an object with properties that correspond to the :params
  *   in the base template. Unused properties become query params.
- * 
+ *
  * @returns {String} a URL with path params substituted and query params appended
  *
  * @example
@@ -23,7 +23,7 @@ export default function urlcat(baseTemplate: string, params: ParamMap): string;
  *
  * @param {String} baseUrl Base URL
  * @param {String} path Path of URL or query :params
- * 
+ *
  * @returns {String} Concatenated URL
  *
  * @example
@@ -44,7 +44,7 @@ export default function urlcat(baseUrl: string, path: string): string;
  * @param {String} path Path of URL or query :params
  * @param {Object} params Object with properties that correspond to the :params
  *   in the base template. Unused properties become query params.
- * 
+ *
  * @returns {String} URL with path params substituted and query params appended
  *
  * @example
@@ -82,7 +82,7 @@ function urlcatImpl(pathTemplate: string, params: ParamMap, baseUrl?: string) {
  * Creates a query string from the object specified.
  *
  * @param {Object} params an object to convert into a query string.
- * 
+ *
  * @returns {String} Query string.
  *
  * @example
@@ -100,7 +100,7 @@ export function query(params: ParamMap): string {
  *
  * @param {String} template a string that contains :params.
  * @param {Object} params on object with keys that correspond to the params in the template.
- * 
+ *
  * @returns {String} Rendering path after substitution .
  *
  * @example
@@ -118,7 +118,7 @@ export function subst(template: string, params: ParamMap): string {
  * Creates the path and path :params
  * @param {String} template a string that contains :params.
  * @param {Object} params on object with keys that correspond to the params in the template.
- * 
+ *
  * @returns {String, String} Rendering path and rendering :params.
  */
 function path(template: string, params: ParamMap) {
@@ -145,7 +145,7 @@ function path(template: string, params: ParamMap) {
 }
 
 /**
- * Joins two strings using a separator. 
+ * Joins two strings using a separator.
  * If the separator occurs at the concatenation boundary in either parameter, it is removed.
  *
  * @param {String} part1 First string.
@@ -153,7 +153,7 @@ function path(template: string, params: ParamMap) {
  * @param {String} part2 Second string.
  *
  * @returns {String} Joined string.
- * 
+ *
  * @example
  * ```ts
  * join('first/', '/', '/second')
@@ -173,7 +173,7 @@ export function join(part1: string, separator: string, part2: string) {
 /**
  * Removes Null and undefined :params.
  * @param params Object consisting of :params
- * 
+ *
  * @returns {Object} Object of :params after removing Null and undefined values
  */
 function removeNullOrUndef(params: ParamMap) {
@@ -188,7 +188,7 @@ function removeNullOrUndef(params: ParamMap) {
 /**
  * Checks whether :param is Null  or undefined.
  * @param v {any} :param
- * 
+ *
  * @returns {Boolean} true -> :param is not Null or not undefined
  * @returns {Boolean} false -> :param is Null or undefined
  */
