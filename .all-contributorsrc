@@ -28,6 +28,15 @@
         "bug",
         "ideas"
       ]
+    },
+    {
+      "login": "polysiya",
+      "name": "Kim Kyudeok",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/722173?v=4",
+      "profile": "https://github.com/polysiya",
+      "contributions": [
+        "ideas"
+      ]
     }
   ],
   "contributorsPerLine": 7,
