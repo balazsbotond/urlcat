@@ -1,4 +1,7 @@
 <h1 align="center">
+<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
+[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors-)
+<!-- ALL-CONTRIBUTORS-BADGE:END -->
   <br>
   <img src="docs/cat.svg" alt="Markdownify">
   <br>
@@ -310,3 +313,22 @@ npm run build
 The output will appear in the `dist` directory.
 
 Happy hacking!
+
+## Contributors ✨
+
+Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
+
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+<!-- prettier-ignore-start -->
+<!-- markdownlint-disable -->
+<table>
+  <tr>
+    <td align="center"><a href="https://github.com/balazsbotond"><img src="https://avatars2.githubusercontent.com/u/2791280?v=4" width="100px;" alt=""/><br /><sub><b>Botond Balázs</b></sub></a><br /><a href="https://github.com/balazsbotond/urlcat/commits?author=balazsbotond" title="Code">💻</a> <a href="https://github.com/balazsbotond/urlcat/commits?author=balazsbotond" title="Tests">⚠️</a> <a href="https://github.com/balazsbotond/urlcat/commits?author=balazsbotond" title="Documentation">📖</a> <a href="#infra-balazsbotond" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a> <a href="https://github.com/balazsbotond/urlcat/issues?q=author%3Abalazsbotond" title="Bug reports">🐛</a> <a href="#maintenance-balazsbotond" title="Maintenance">🚧</a></td>
+  </tr>
+</table>
+
+<!-- markdownlint-enable -->
+<!-- prettier-ignore-end -->
+<!-- ALL-CONTRIBUTORS-LIST:END -->
+
+This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
