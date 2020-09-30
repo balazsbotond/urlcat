@@ -21,10 +21,10 @@ export default function urlcat(baseTemplate: string, params: ParamMap): string;
  * Concatenates the base URL and the path specified using '/' as a separator.
  * If a '/' occurs at the concatenation boundary in either parameter, it is removed.
  *
- * @param {String} baseUrl Base URL
- * @param {String} path Path of URL or query :params
+ * @param {String} baseUrl the first part of the URL
+ * @param {String} path the second part of the URL
  *
- * @returns {String} Concatenated URL
+ * @returns {String} the result of the concatenation
  *
  * @example
  * ```ts
@@ -40,8 +40,8 @@ export default function urlcat(baseUrl: string, path: string): string;
  * Substitutes path parameters with the properties of the @see params object and appends
  * properties unused in the path as query params.
  *
- * @param {String} baseUrl Base URL
- * @param {String} path Path of URL or query :params
+ * @param {String} baseUrl the first part of the URL
+ * @param {String} path the second part of the URL
  * @param {Object} params Object with properties that correspond to the :params
  *   in the base template. Unused properties become query params.
  *
@@ -101,7 +101,7 @@ export function query(params: ParamMap): string {
  * @param {String} template a string that contains :params.
  * @param {Object} params on object with keys that correspond to the params in the template.
  *
- * @returns {String} Rendering path after substitution .
+ * @returns {String} Rendered path after substitution.
  *
  * @example
  * ```ts
@@ -114,13 +114,6 @@ export function subst(template: string, params: ParamMap): string {
   return renderedPath;
 }
 
-/**
- * Creates the path and path :params
- * @param {String} template a string that contains :params.
- * @param {Object} params on object with keys that correspond to the params in the template.
- *
- * @returns {String, String} Rendering path and rendering :params.
- */
 function path(template: string, params: ParamMap) {
   const remainingParams = { ...params };
   const allowedTypes = ["boolean", "string", "number"];
@@ -146,7 +139,8 @@ function path(template: string, params: ParamMap) {
 
 /**
  * Joins two strings using a separator.
- * If the separator occurs at the concatenation boundary in either parameter, it is removed.
+ * If the separator occurs at the concatenation boundary in either of the strings, it is removed.
+ * This prevents accidental duplication of the separator.
  *
  * @param {String} part1 First string.
  * @param {String} separator Separator used for joining.
@@ -167,15 +161,11 @@ export function join(part1: string, separator: string, part2: string) {
   const p2 = part2.startsWith(separator)
     ? part2.slice(separator.length)
     : part2;
-  return p1 === "" || p2 === "" ? p1 + p2 : p1 + separator + p2;
+    return p1 === '' || p2 === ''
+      ? p1 + p2
+      : p1 + separator + p2;
 }
 
-/**
- * Removes Null and undefined :params.
- * @param params Object consisting of :params
- *
- * @returns {Object} Object of :params after removing Null and undefined values
- */
 function removeNullOrUndef(params: ParamMap) {
   return Object.keys(params)
     .filter(k => notNullOrUndefined(params[k]))
@@ -185,13 +175,6 @@ function removeNullOrUndef(params: ParamMap) {
     }, {} as ParamMap);
 }
 
-/**
- * Checks whether :param is Null  or undefined.
- * @param v {any} :param
- *
- * @returns {Boolean} true -> :param is not Null or not undefined
- * @returns {Boolean} false -> :param is Null or undefined
- */
 function notNullOrUndefined(v: any) {
   return v !== undefined && v !== null;
 }

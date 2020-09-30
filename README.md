@@ -52,7 +52,7 @@ Features:
 
 ## Why?
 
-When we call an HTTP API, we usually need to add dynamic parameters to the URL:
+When I call an HTTP API, I usually need to add dynamic parameters to the URL:
 
 ~~~js
 const API_URL = 'https://api.example.com/';
@@ -65,10 +65,10 @@ function getUserPosts(id, blogId, limit, offset) {
 
 As we can see, this minimal example is already rather hard to read. It is also incorrect:
 
-- One common issue is of trailing slashes, `API_URL` has a trailing slash in the example. This will lead to URL containing duplicated slashes (`https://api.example.com//users`).
+- This will lead to URL containing duplicated slashes (`https://api.example.com//users`).
 - The embedded values need to be escaped using `encodeURIComponent`
 
-We can use the built-in `URL` class to prevent duplicate slashes and `URLSearchParams` to escape the query string. But we still need to escape all path parameters manually.
+I can use the built-in `URL` class to prevent duplicate slashes and `URLSearchParams` to escape the query string. But I still need to escape all path parameters manually.
 
 ~~~js
 const API_URL = 'https://api.example.com/';
@@ -126,7 +126,7 @@ To use any of the utility functions:
 const { query, subst, join } = require('urlcat');
 ```
 
-To use everything:
+To use all exported functions:
 
 ```ts
 const { default: urlcat, query, subst, join } = require('urlcat');
@@ -264,7 +264,7 @@ Joins the two parts using exactly one separator. If a separator is present at th
 
 Thank you for using *urlcat*!
 
-For any kind of help needed while using this library, feel free to [create a GitHub issue](https://github.com/balazsbotond/urlcat/issues/new/choose), and ask your questions. I'll try to answer as quickly as possible.
+If you need any help using this library, feel free to [create a GitHub issue](https://github.com/balazsbotond/urlcat/issues/new/choose), and ask your questions. I'll try to answer as quickly as possible.
 
 ## Contribute
 
