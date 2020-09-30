@@ -314,7 +314,7 @@ Happy hacking!
 ## Contributors ✨
 
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-4-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-5-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
@@ -328,6 +328,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <td align="center"><a href="https://llll-ll.com"><img src="https://avatars0.githubusercontent.com/u/3541096?v=4" width="100px;" alt=""/><br /><sub><b>kako-jun</b></sub></a><br /><a href="https://github.com/balazsbotond/urlcat/issues?q=author%3Akako-jun" title="Bug reports">🐛</a> <a href="#ideas-kako-jun" title="Ideas, Planning, & Feedback">🤔</a></td>
     <td align="center"><a href="https://github.com/polysiya"><img src="https://avatars1.githubusercontent.com/u/722173?v=4" width="100px;" alt=""/><br /><sub><b>Kim Kyudeok</b></sub></a><br /><a href="#ideas-polysiya" title="Ideas, Planning, & Feedback">🤔</a></td>
     <td align="center"><a href="https://github.com/harshilparmar"><img src="https://avatars3.githubusercontent.com/u/45915468?v=4" width="100px;" alt=""/><br /><sub><b>Harshil Parmar</b></sub></a><br /><a href="https://github.com/balazsbotond/urlcat/commits?author=harshilparmar" title="Code">💻</a></td>
+    <td align="center"><a href="https://knpw.rs"><img src="https://avatars0.githubusercontent.com/u/174864?v=4" width="100px;" alt=""/><br /><sub><b>Ken Powers</b></sub></a><br /><a href="#platform-knpwrs" title="Packaging/porting to new platform">📦</a> <a href="#userTesting-knpwrs" title="User Testing">📓</a></td>
   </tr>
 </table>
 
