@@ -1,0 +1,112 @@
+{
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": false,
+  "contributors": [
+    {
+      "login": "balazsbotond",
+      "name": "Botond Balázs",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/2791280?v=4",
+      "profile": "https://github.com/balazsbotond",
+      "contributions": [
+        "code",
+        "test",
+        "doc",
+        "infra",
+        "bug",
+        "maintenance"
+      ]
+    },
+    {
+      "login": "kako-jun",
+      "name": "kako-jun",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/3541096?v=4",
+      "profile": "https://llll-ll.com",
+      "contributions": [
+        "bug",
+        "ideas"
+      ]
+    },
+    {
+      "login": "polysiya",
+      "name": "Kim Kyudeok",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/722173?v=4",
+      "profile": "https://github.com/polysiya",
+      "contributions": [
+        "ideas"
+      ]
+    },
+    {
+      "login": "harshilparmar",
+      "name": "Harshil Parmar",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/45915468?v=4",
+      "profile": "https://github.com/harshilparmar",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "knpwrs",
+      "name": "Ken Powers",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/174864?v=4",
+      "profile": "https://knpw.rs",
+      "contributions": [
+        "platform",
+        "userTesting"
+      ]
+    },
+    {
+      "login": "praveen5959",
+      "name": "Praveen K B",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/30530587?v=4",
+      "profile": "https://github.com/praveen5959",
+      "contributions": [
+        "ideas"
+      ]
+    },
+    {
+      "login": "EngrKhizarIqbal",
+      "name": "Khizar Iqbal",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/5228711?v=4",
+      "profile": "http://@engrkhizariqbal",
+      "contributions": [
+        "ideas"
+      ]
+    },
+    {
+      "login": "SimonJang",
+      "name": "Simon Jang",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/10977475?v=4",
+      "profile": "https://github.com/SimonJang",
+      "contributions": [
+        "ideas"
+      ]
+    },
+    {
+      "login": "chengluyu",
+      "name": "Luyu Cheng",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/2239547?v=4",
+      "profile": "https://luyu.blog",
+      "contributions": [
+        "doc"
+      ]
+    },
+    {
+      "login": "screendriver",
+      "name": "Christian Rackerseder",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/149248?v=4",
+      "profile": "https://www.echooff.dev",
+      "contributions": [
+        "doc"
+      ]
+    }
+  ],
+  "contributorsPerLine": 7,
+  "projectName": "urlcat",
+  "projectOwner": "balazsbotond",
+  "repoType": "github",
+  "repoHost": "https://github.com",
+  "skipCi": true
+}

@@ -6,3 +6,7 @@ node_js:
   - 12
   - 11
   - 10
+script:
+  - npm run lint
+  - npm test
+  - npm run coverage

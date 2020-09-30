@@ -39,4 +39,42 @@ describe('subst', () => {
     expect(actual).to.equal(expected);
   });
 
+  it('Allowed Type boolean (true)  should be rendered', () => {
+    const expected = 'true';
+    const actual = subst(':p', { p: true });
+    expect(actual).to.equal(expected);
+  });
+
+  it('Allowed Type boolean (false)  should be rendered', () => {
+    const expected = 'false';
+    const actual = subst(':p', { p: false });
+    expect(actual).to.equal(expected);
+  });
+
+  it('Allowed Type string  should be rendered', () => {
+    const expected = 'test';
+    const actual = subst(':p', { p: 'test' });
+    expect(actual).to.equal(expected);
+  });
+
+  it('Allowed Type Number should be rendered', () => {
+    const expected = '234';
+    const actual = subst(':p', { p: 234 });
+    expect(actual).to.equal(expected);
+  });
+
+  it('Not Allowed Type Array should not be rendered', () => {
+    expect(() => subst(':p', { p: [] }))
+      .to.throw(TypeError, "Path parameter p cannot be of type object. Allowed types are: boolean, string, number.");
+  });
+
+  it('Not Allowed Type Object should not be rendered', () => {
+    expect(() => subst(':p', { p: {} }))
+      .to.throw(TypeError, "Path parameter p cannot be of type object. Allowed types are: boolean, string, number.");
+  });
+
+  it('Not Allowed Type Symbol should not be rendered', () => {
+    expect(() => subst(':p', { p: Symbol() }))
+      .to.throw(TypeError, "Path parameter p cannot be of type symbol. Allowed types are: boolean, string, number.");
+  });
 });
