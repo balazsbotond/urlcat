@@ -83,6 +83,15 @@
       "contributions": [
         "ideas"
       ]
+    },
+    {
+      "login": "chengluyu",
+      "name": "Luyu Cheng",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/2239547?v=4",
+      "profile": "https://luyu.blog",
+      "contributions": [
+        "doc"
+      ]
     }
   ],
   "contributorsPerLine": 7,
