@@ -314,7 +314,7 @@ Happy hacking!
 ## Contributors ✨
 
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-8-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-9-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
@@ -334,6 +334,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
   </tr>
   <tr>
     <td align="center"><a href="https://github.com/SimonJang"><img src="https://avatars2.githubusercontent.com/u/10977475?v=4" width="100px;" alt=""/><br /><sub><b>Simon Jang</b></sub></a><br /><a href="#ideas-SimonJang" title="Ideas, Planning, & Feedback">🤔</a></td>
+    <td align="center"><a href="https://luyu.blog"><img src="https://avatars0.githubusercontent.com/u/2239547?v=4" width="100px;" alt=""/><br /><sub><b>Luyu Cheng</b></sub></a><br /><a href="https://github.com/balazsbotond/urlcat/commits?author=chengluyu" title="Documentation">📖</a></td>
   </tr>
 </table>
 
