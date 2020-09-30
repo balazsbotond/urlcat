@@ -125,10 +125,15 @@ function path(template: string, params: ParamMap) {
     }
     delete remainingParams[key];
 
-    if (!allowedTypes.includes(typeof params[key]) || typeof params[key] === "string" && params[key].trim().length <= 0) {
+    if (!allowedTypes.includes(typeof params[key])) {
       throw new TypeError(
         `Path parameter ${key} cannot be of type ${typeof params[key]}. ` +
         `Allowed types are: ${allowedTypes.join(', ')}.`
+      );
+    }
+    if (typeof params[key] === "string" && params[key].trim().length <= 0) {
+      throw new Error(
+        `Path parameter ${key} cannot be an empty string.`
       );
     }
     return encodeURIComponent(params[key]);
@@ -161,9 +166,9 @@ export function join(part1: string, separator: string, part2: string) {
   const p2 = part2.startsWith(separator)
     ? part2.slice(separator.length)
     : part2;
-    return p1 === '' || p2 === ''
-      ? p1 + p2
-      : p1 + separator + p2;
+  return p1 === '' || p2 === ''
+    ? p1 + p2
+    : p1 + separator + p2;
 }
 
 function removeNullOrUndef(params: ParamMap) {

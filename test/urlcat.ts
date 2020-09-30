@@ -153,8 +153,8 @@ describe('urlcat', () => {
       .to.throw(TypeError, "Path parameter p cannot be of type object. Allowed types are: boolean, string, number.");
   });
 
-  it('Can\'t handle blank string as param', () => {
+  it('Can\'t handle empty string as param', () => {
     expect(() => urlcat('http://example.com/path/:p', { p: " " }))
-      .to.throw(TypeError, "Path parameter p cannot be of type string. Allowed types are: boolean, string, number.");
+      .to.throw(Error, "Path parameter p cannot be an empty string.");
   });
 });
