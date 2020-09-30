@@ -1,0 +1,29 @@
+{
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": false,
+  "contributors": [
+    {
+      "login": "balazsbotond",
+      "name": "Botond Balázs",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/2791280?v=4",
+      "profile": "https://github.com/balazsbotond",
+      "contributions": [
+        "code",
+        "test",
+        "doc",
+        "infra",
+        "bug",
+        "maintenance"
+      ]
+    }
+  ],
+  "contributorsPerLine": 7,
+  "projectName": "urlcat",
+  "projectOwner": "balazsbotond",
+  "repoType": "github",
+  "repoHost": "https://github.com",
+  "skipCi": true
+}
