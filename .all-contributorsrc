@@ -104,6 +104,7 @@
     }
   ],
   "contributorsPerLine": 7,
+  "contributorsSortAlphabetically": true,
   "projectName": "urlcat",
   "projectOwner": "balazsbotond",
   "repoType": "github",
