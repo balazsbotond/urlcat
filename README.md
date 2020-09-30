@@ -22,7 +22,6 @@
   <a href="https://coveralls.io/github/balazsbotond/urlcat?branch=master">
     <img src="https://coveralls.io/repos/github/balazsbotond/urlcat/badge.svg?branch=master" alt="Coverage Status" />
   </a>
-  <img alt="Snyk Vulnerabilities for npm package" src="https://img.shields.io/snyk/vulnerabilities/npm/urlcat">
 </p>
 
 <p align="center">
