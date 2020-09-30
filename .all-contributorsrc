@@ -66,9 +66,46 @@
         "ideas",
         "doc"
       ]
+    },
+    {
+      "login": "EngrKhizarIqbal",
+      "name": "Khizar Iqbal",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/5228711?v=4",
+      "profile": "http://@engrkhizariqbal",
+      "contributions": [
+        "ideas"
+      ]
+    },
+    {
+      "login": "SimonJang",
+      "name": "Simon Jang",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/10977475?v=4",
+      "profile": "https://github.com/SimonJang",
+      "contributions": [
+        "ideas"
+      ]
+    },
+    {
+      "login": "chengluyu",
+      "name": "Luyu Cheng",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/2239547?v=4",
+      "profile": "https://luyu.blog",
+      "contributions": [
+        "doc"
+      ]
+    },
+    {
+      "login": "screendriver",
+      "name": "Christian Rackerseder",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/149248?v=4",
+      "profile": "https://www.echooff.dev",
+      "contributions": [
+        "doc"
+      ]
     }
   ],
   "contributorsPerLine": 7,
+  "contributorsSortAlphabetically": true,
   "projectName": "urlcat",
   "projectOwner": "balazsbotond",
   "repoType": "github",
