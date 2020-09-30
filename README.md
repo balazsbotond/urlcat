@@ -22,7 +22,6 @@
   <a href="https://coveralls.io/github/balazsbotond/urlcat?branch=master">
     <img src="https://coveralls.io/repos/github/balazsbotond/urlcat/badge.svg?branch=master" alt="Coverage Status" />
   </a>
-  <img alt="Snyk Vulnerabilities for npm package" src="https://img.shields.io/snyk/vulnerabilities/npm/urlcat">
 </p>
 
 <p align="center">
@@ -52,7 +51,7 @@ Features:
 
 ## Why?
 
-When I need to call an HTTP API, I usually need to add dynamic parameters to the URL:
+When I call an HTTP API, I usually need to add dynamic parameters to the URL:
 
 ~~~js
 const API_URL = 'https://api.example.com/';
@@ -63,9 +62,9 @@ function getUserPosts(id, blogId, limit, offset) {
 }
 ~~~
 
-As you can see, this minimal example is already rather hard to read. It is also incorrect:
+As we can see, this minimal example is already rather hard to read. It is also incorrect:
 
-- I forgot that there was a trailing slash at the end of the `API_URL` constant so the slash got duplicated (`https://api.example.com//users`)
+- This will lead to URL containing duplicated slashes (`https://api.example.com//users`).
 - The embedded values need to be escaped using `encodeURIComponent`
 
 I can use the built-in `URL` class to prevent duplicate slashes and `URLSearchParams` to escape the query string. But I still need to escape all path parameters manually.
@@ -84,7 +83,7 @@ function getUserPosts(id, blogId, limit, offset) {
 }
 ~~~
 
-Such a simple task and yet very hard to read and tedious to write! This is why I made this tiny library:
+Such a simple task and yet very hard to read and tedious to write! This is what lead to creation of this tiny library:
 
 ~~~js
 const API_URL = 'https://api.example.com/';
@@ -103,7 +102,7 @@ The library handles:
 
 ### Install
 
-Currently, the package is distributed via npm. Zip downloads and a CDN are coming soon.
+Currently, the package is distributed via npm. (Zip downloads and a CDN are coming soon).
 
 ```bash
 npm install --save urlcat
@@ -111,21 +110,22 @@ npm install --save urlcat
 
 ### Usage with Node
 
-Node 10 and above are officially supported. Since the code uses the `URL` and `URLSearchParams` classes internally, which aren't available below v10, we cannot support those versions.
+Node 10 and above are officially supported. 
+Since the code uses the `URL` and `URLSearchParams` classes internally, which aren't available below v10, we cannot support those versions.
 
-If you want to build full URLs (most common use case):
+To build full URLs (most common use case):
 
 ```ts
 const urlcat = require('urlcat').default;
 ```
 
-If you want to use any of the utility functions:
+To use any of the utility functions:
 
 ```ts
 const { query, subst, join } = require('urlcat');
 ```
 
-If you want to use everything:
+To use all exported functions:
 
 ```ts
 const { default: urlcat, query, subst, join } = require('urlcat');
@@ -135,19 +135,19 @@ const { default: urlcat, query, subst, join } = require('urlcat');
 
 TypeScript 2.1 and above are officially supported.
 
-If you want to build full URLs (most common use case):
+To build full URLs (most common use case):
 
 ```ts
 import urlcat from 'urlcat';
 ```
 
-If you want to use any of the utility functions:
+To use any of the utility functions:
 
 ```ts
 import { query, subst, join } from 'urlcat';
 ```
 
-If you want to use everything:
+To use everything:
 
 ```ts
 import urlcat, { query, subst, join } from 'urlcat';
@@ -208,7 +208,8 @@ function urlcat(baseTemplate: string, params: ParamMap): string
   </li>
 </ul>
 
-**NOTE about empty path segments:** [RFC 3986](https://tools.ietf.org/html/rfc3986) allows empty path segments in URLs (for example, `https://example.com//users////2`). *urlcat* keeps any empty path segments that aren't at the concatenation boundary between `baseUrl` and `pathTemplate`. If you need to include an empty path segment there, you have two options:
+**NOTE about empty path segments:** 
+[RFC 3986](https://tools.ietf.org/html/rfc3986) allows empty path segments in URLs (for example, `https://example.com//users////2`). *urlcat* keeps any empty path segments that aren't at the concatenation boundary between `baseUrl` and `pathTemplate`. To include an empty path segment there are two options:
 - use a double slash: `urlcat('https://example.com/', '//users', { q: 1 })` → `https://example.com//users?q=1`
 - use the `baseTemplate` overload: `urlcat('https://example.com//users', { q: 1 })` → `https://example.com//users?q=1`
 
@@ -270,7 +271,7 @@ Joins the two parts using exactly one separator. If a separator is present at th
 
 Thank you for using *urlcat*!
 
-If you need any help using this library, feel free to [create a GitHub issue](https://github.com/balazsbotond/urlcat/issues/new/choose) and ask your questions. I'll try to answer as quickly as possible.
+If you need any help using this library, feel free to [create a GitHub issue](https://github.com/balazsbotond/urlcat/issues/new/choose), and ask your questions. I'll try to answer as quickly as possible.
 
 ## Contribute
 
@@ -280,7 +281,8 @@ Contributions of any kind (pull requests, bug reports, feature requests, documen
 
 Building the project should be quick and easy. If it isn't, it's the maintainer's fault. Please report any problems with building in a GitHub issue.
 
-You need to have a reasonably recent version of node.js to build *urlcat*. My node version is 12.18.3, npm is at 6.14.6.
+You need to have a reasonably recent version of node.js to build *urlcat*. 
+Tested on node version 12.18.3 and npm version 6.14.6.
 
 First, clone the git repository:
 
@@ -329,7 +331,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <td align="center"><a href="https://github.com/polysiya"><img src="https://avatars1.githubusercontent.com/u/722173?v=4" width="100px;" alt=""/><br /><sub><b>Kim Kyudeok</b></sub></a><br /><a href="#ideas-polysiya" title="Ideas, Planning, & Feedback">🤔</a></td>
     <td align="center"><a href="https://github.com/harshilparmar"><img src="https://avatars3.githubusercontent.com/u/45915468?v=4" width="100px;" alt=""/><br /><sub><b>Harshil Parmar</b></sub></a><br /><a href="https://github.com/balazsbotond/urlcat/commits?author=harshilparmar" title="Code">💻</a></td>
     <td align="center"><a href="https://knpw.rs"><img src="https://avatars0.githubusercontent.com/u/174864?v=4" width="100px;" alt=""/><br /><sub><b>Ken Powers</b></sub></a><br /><a href="#platform-knpwrs" title="Packaging/porting to new platform">📦</a> <a href="#userTesting-knpwrs" title="User Testing">📓</a></td>
-    <td align="center"><a href="https://github.com/praveen5959"><img src="https://avatars3.githubusercontent.com/u/30530587?v=4" width="100px;" alt=""/><br /><sub><b>Praveen K B</b></sub></a><br /><a href="#ideas-praveen5959" title="Ideas, Planning, & Feedback">🤔</a></td>
+    <td align="center"><a href="https://github.com/praveen5959"><img src="https://avatars3.githubusercontent.com/u/30530587?v=4" width="100px;" alt=""/><br /><sub><b>Praveen K B</b></sub></a><br /><a href="#ideas-praveen5959" title="Ideas, Planning, & Feedback">🤔</a> <a href="https://github.com/balazsbotond/urlcat/commits?author=praveen5959" title="Documentation">📖</a></td>
     <td align="center"><a href="http://@engrkhizariqbal"><img src="https://avatars0.githubusercontent.com/u/5228711?v=4" width="100px;" alt=""/><br /><sub><b>Khizar Iqbal</b></sub></a><br /><a href="#ideas-EngrKhizarIqbal" title="Ideas, Planning, & Feedback">🤔</a></td>
   </tr>
   <tr>
