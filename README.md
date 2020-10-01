@@ -46,7 +46,7 @@
 Features:
 - Friendly API
 - No dependencies
-- 0.6 KB minified and gzipped
+- 0.8 KB minified and gzipped
 - TypeScript types provided
 
 ## Why?
