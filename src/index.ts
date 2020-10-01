@@ -1,7 +1,7 @@
 export type ParamMap = Record<string, any>;
 
 /**
- * Builds a URL using the base template and parameters specified.
+ * Builds a URL using the base template and specified parameters.
  *
  * @param {String} baseTemplate a URL template that contains zero or more :params
  * @param {Object} params an object with properties that correspond to the :params
@@ -38,7 +38,7 @@ export default function urlcat(baseUrl: string, path: string): string;
  * Concatenates the base URL and the path specified using '/' as a separator.
  * If a '/' occurs at the concatenation boundary in either parameter, it is removed.
  * Substitutes path parameters with the properties of the @see params object and appends
- * properties unused in the path as query params.
+ * unused properties in the path as query params.
  *
  * @param {String} baseUrl the first part of the URL
  * @param {String} path the second part of the URL
@@ -79,7 +79,7 @@ function urlcatImpl(pathTemplate: string, params: ParamMap, baseUrl?: string) {
 }
 
 /**
- * Creates a query string from the object specified.
+ * Creates a query string from the specified object.
  *
  * @param {Object} params an object to convert into a query string.
  *
@@ -99,7 +99,7 @@ export function query(params: ParamMap): string {
  * Substitutes :params in a template with property values of an object.
  *
  * @param {String} template a string that contains :params.
- * @param {Object} params on object with keys that correspond to the params in the template.
+ * @param {Object} params an object with keys that correspond to the params in the template.
  *
  * @returns {String} Rendered path after substitution.
  *
