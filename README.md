@@ -151,7 +151,7 @@ To use any of the utility functions:
 import { query, subst, join } from 'urlcat';
 ```
 
-To use everything:
+To use all exported functions:
 
 ```ts
 import urlcat, { query, subst, join } from 'urlcat';
