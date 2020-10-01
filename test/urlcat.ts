@@ -127,6 +127,12 @@ describe('urlcat', () => {
     expect(actual).to.equal(expected);
   });
 
+  it('Ignores entirely numeric path params', () => {
+    const expected = 'http://localhost:3000/path/test';
+    const actual = urlcat('http://localhost:3000/path/:p', { p: 'test' });
+    expect(actual).to.equal(expected);
+  });
+
   it('Throws if a path param is an object', () => {
     expect(() => urlcat('http://example.com/path/:p', { p: {} }))
       .to.throw(TypeError, "Path parameter p cannot be of type object. Allowed types are: boolean, string, number.");
