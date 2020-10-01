@@ -62,9 +62,9 @@ function getUserPosts(id, blogId, limit, offset) {
 }
 ~~~
 
-As we can see, this minimal example is already rather hard to read. It is also incorrect:
+As you can see, this minimal example is already rather hard to read. It is also incorrect:
 
-- This will lead to URL containing duplicated slashes (`https://api.example.com//users`).
+- I forgot that there was a trailing slash at the end of the `API_URL` constant so this resulted in a URL containing duplicate slashes (`https://api.example.com//users`).
 - The embedded values need to be escaped using `encodeURIComponent`
 
 I can use the built-in `URL` class to prevent duplicate slashes and `URLSearchParams` to escape the query string. But I still need to escape all path parameters manually.
@@ -83,7 +83,7 @@ function getUserPosts(id, blogId, limit, offset) {
 }
 ~~~
 
-Such a simple task and yet very hard to read and tedious to write! This is what lead to creation of this tiny library:
+Such a simple task and yet very hard to read and tedious to write! This is where this tiny library can help you:
 
 ~~~js
 const API_URL = 'https://api.example.com/';

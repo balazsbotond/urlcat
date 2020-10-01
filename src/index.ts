@@ -121,21 +121,18 @@ function path(template: string, params: ParamMap) {
   const renderedPath = template.replace(/:\w+/g, p => {
     const key = p.slice(1);
     if (!params.hasOwnProperty(key)) {
-      return p;
+      throw new Error(`Missing value for path parameter ${key}.`);
     }
-    delete remainingParams[key];
-
     if (!allowedTypes.includes(typeof params[key])) {
       throw new TypeError(
         `Path parameter ${key} cannot be of type ${typeof params[key]}. ` +
         `Allowed types are: ${allowedTypes.join(', ')}.`
       );
     }
-    if (typeof params[key] === "string" && params[key].trim().length <= 0) {
-      throw new Error(
-        `Path parameter ${key} cannot be an empty string.`
-      );
+    if (typeof params[key] === "string" && params[key].trim() === '') {
+      throw new Error(`Path parameter ${key} cannot be an empty string.`);
     }
+    delete remainingParams[key];
     return encodeURIComponent(params[key]);
   });
 

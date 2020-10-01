@@ -103,58 +103,62 @@ describe('urlcat', () => {
     expect(actual).to.equal(expected);
   });
 
-  it('Can handle allowed Type boolean (true) as param', () => {
+  it('Renders boolean (true) path params', () => {
     const expected = 'http://example.com/path/true';
     const actual = urlcat('http://example.com/path/:p', { p: true });
     expect(actual).to.equal(expected);
   });
 
-  it('Can handle allowed Type boolean (false) as param', () => {
+  it('Renders boolean (false) path params', () => {
     const expected = 'http://example.com/path/false';
     const actual = urlcat('http://example.com/path/:p', { p: false });
     expect(actual).to.equal(expected);
   });
 
-
-  it('Can handle allowed Type Number as param', () => {
+  it('Renders number path params', () => {
     const expected = 'http://example.com/path/456';
     const actual = urlcat('http://example.com/path/:p', { p: 456 });
     expect(actual).to.equal(expected);
   });
 
-  it('Can handle allowed Type String as param', () => {
+  it('Renders string path params', () => {
     const expected = 'http://example.com/path/test';
     const actual = urlcat('http://example.com/path/:p', { p: 'test' });
     expect(actual).to.equal(expected);
   });
 
-  it('Can\'t handle object as param', () => {
+  it('Throws if a path param is an object', () => {
     expect(() => urlcat('http://example.com/path/:p', { p: {} }))
       .to.throw(TypeError, "Path parameter p cannot be of type object. Allowed types are: boolean, string, number.");
   });
 
-  it('Can\'t handle array as param', () => {
+  it('Throws if a path param is an array', () => {
     expect(() => urlcat('http://example.com/path/:p/:q', { p: [] }))
       .to.throw(TypeError, "Path parameter p cannot be of type object. Allowed types are: boolean, string, number.");
   });
 
-  it('Can\'t handle symbol as param', () => {
+  it('Throws if a path param is a symbol', () => {
     expect(() => urlcat('http://example.com/path/:p', { p: Symbol() }))
       .to.throw(TypeError, "Path parameter p cannot be of type symbol. Allowed types are: boolean, string, number.");
   });
 
-  it('Can\'t handle undefined as param', () => {
+  it('Throws if a path param is undefined', () => {
     expect(() => urlcat('http://example.com/path/:p', { p: undefined }))
       .to.throw(TypeError, "Path parameter p cannot be of type undefined. Allowed types are: boolean, string, number.");
   });
 
-  it('Can\'t handle null as param', () => {
+  it('Throws if a path param is null', () => {
     expect(() => urlcat('http://example.com/path/:p', { p: null }))
       .to.throw(TypeError, "Path parameter p cannot be of type object. Allowed types are: boolean, string, number.");
   });
 
-  it('Can\'t handle empty string as param', () => {
-    expect(() => urlcat('http://example.com/path/:p', { p: " " }))
+  it('Throws if a path param is an empty string', () => {
+    expect(() => urlcat('http://example.com/path/:p', { p: "" }))
+      .to.throw(Error, "Path parameter p cannot be an empty string.");
+  });
+
+  it('Throws if a path param contains only whitespace', () => {
+    expect(() => urlcat('http://example.com/path/:p', { p: "  " }))
       .to.throw(Error, "Path parameter p cannot be an empty string.");
   });
 });
