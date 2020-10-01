@@ -69,9 +69,9 @@ export default function urlcat(baseUrlOrTemplate: string, pathTemplateOrParams: 
 }
 
 function urlcatImpl(pathTemplate: string, params: ParamMap, baseUrl?: string) {
-  const cleanParams = removeNullOrUndef(params);
-  const { renderedPath, remainingParams } = path(pathTemplate, cleanParams);
-  const renderedQuery = query(remainingParams);
+  const { renderedPath, remainingParams } = path(pathTemplate, params);
+  const cleanParams = removeNullOrUndef(remainingParams);
+  const renderedQuery = query(cleanParams);
   const pathAndQuery = join(renderedPath, '?', renderedQuery);
   return baseUrl
     ? join(baseUrl, '/', pathAndQuery)
@@ -131,6 +131,11 @@ function path(template: string, params: ParamMap) {
         `Allowed types are: ${allowedTypes.join(', ')}.`
       );
     }
+    if (typeof params[key] === "string" && params[key].trim().length <= 0) {
+      throw new Error(
+        `Path parameter ${key} cannot be an empty string.`
+      );
+    }
     return encodeURIComponent(params[key]);
   });
 
@@ -161,9 +166,9 @@ export function join(part1: string, separator: string, part2: string) {
   const p2 = part2.startsWith(separator)
     ? part2.slice(separator.length)
     : part2;
-    return p1 === '' || p2 === ''
-      ? p1 + p2
-      : p1 + separator + p2;
+  return p1 === '' || p2 === ''
+    ? p1 + p2
+    : p1 + separator + p2;
 }
 
 function removeNullOrUndef(params: ParamMap) {
