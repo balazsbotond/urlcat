@@ -121,6 +121,15 @@
         "bug",
         "code"
       ]
+    },
+    {
+      "login": "tiago154",
+      "name": "Tiago Santos Da Silva",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/10531605?v=4",
+      "profile": "https://www.linkedin.com/in/tiago-santos-da-silva-328a63ba/",
+      "contributions": [
+        "code"
+      ]
     }
   ],
   "contributorsPerLine": 7,
