@@ -129,7 +129,7 @@ describe('urlcat', () => {
   it('Ignores entirely numeric path params', () => {
     const expected = 'http://localhost:3000/path/test';
     const actual = urlcat('http://localhost:3000/path/:p', { p: 'test' });
-    expect(actual).to.equal(expected);
+    expect(actual).toBe(expected);
   });
 
   it('Throws if a path param is an object', () => {

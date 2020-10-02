@@ -9,5 +9,8 @@ module.exports = {
   verbose: true,
   collectCoverageFrom: [
     '**/src/**/*.ts'
+  ],
+  testPathIgnorePatterns: [
+    'dist.*\\.ts$'
   ]
 }
