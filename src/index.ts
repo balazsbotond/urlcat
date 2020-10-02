@@ -120,6 +120,7 @@ function path(template: string, params: ParamMap) {
 
   const renderedPath = template.replace(/:\w+/g, p => {
     const key = p.slice(1);
+    if ( /^\d+$/.test( key ) ) return p;
     if (!params.hasOwnProperty(key)) {
       throw new Error(`Missing value for path parameter ${key}.`);
     }
