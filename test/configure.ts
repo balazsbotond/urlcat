@@ -32,4 +32,12 @@ describe('configure', () => {
     const actual = urlcat('http://example.com/path/:p', { p: 'a b', q: 'b c', c: ['foo', 'bar'] }, undefined, {arrayFormat: 'comma', objectFormat: {format: 'RFC3986'}});
     expect(actual).toBe(expected);
   });
+
+  it('Creates a decorator that supports the 3-parameter overload', () => {
+    const expected = 'http://example.com/path/1';
+    const urlcat = configure({objectFormat: {format: 'RFC1738'}})
+
+    const actual = urlcat('http://example.com/', '/path/:p', { p: 1 });
+    expect(actual).toBe(expected);
+  });
 });
