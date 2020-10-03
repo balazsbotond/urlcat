@@ -1,13 +1,32 @@
+language: node_js
 matrix:
   include:
-    - language: node_js
-      node_js:
-        - lts/*
-        - 14
-        - 13
-        - 12
-        - 11
-        - 10
+    - node_js: lts/*
+      script:
+        - npm run lint
+        - npm test
+        - npm run coverage
+    - node_js: 14
+      script:
+        - npm run lint
+        - npm test
+        - npm run coverage
+    - node_js: 13
+      script:
+        - npm run lint
+        - npm test
+        - npm run coverage
+    - node_js: 12
+      script:
+        - npm run lint
+        - npm test
+        - npm run coverage
+    - node_js: 11
+      script:
+        - npm run lint
+        - npm test
+        - npm run coverage
+    - node_js: 10
       script:
         - npm run lint
         - npm test
