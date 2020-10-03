@@ -30,9 +30,12 @@
   ],
   "author": "Botond Balazs",
   "license": "MIT",
-  "dependencies": {},
+  "dependencies": {
+    "qs": "^6.9.4"
+  },
   "devDependencies": {
     "@types/jest": "26.0.14",
+    "@types/qs": "^6.9.5",
     "coveralls": "3.1.0",
     "jest": "26.4.2",
     "shx": "0.3.2",
