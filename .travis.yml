@@ -1,12 +1,23 @@
-language: node_js
-node_js:
-  - lts/*
-  - 14
-  - 13
-  - 12
-  - 11
-  - 10
-script:
-  - npm run lint
-  - npm test
-  - npm run coverage
+matrix:
+  include:
+    - language: node_js
+      node_js:
+        - lts/*
+        - 14
+        - 13
+        - 12
+        - 11
+        - 10
+      script:
+        - npm run lint
+        - npm test
+        - npm run coverage
+    - language: minimal
+      services:
+        - docker
+      script:
+        - docker build -f Dockerfile.deno -t urlcat-deno .
+        - docker run --rm urlcat-deno run ./src/index.ts
+        - docker run --rm urlcat-deno bundle ./src/index.ts
+        - docker run --rm urlcat-deno lint --unstable src/
+        - docker rmi urlcat-deno
