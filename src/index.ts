@@ -110,7 +110,7 @@ export function configure(rootConfig: UrlCatConfiguration) {
     urlcat(baseUrlOrTemplate, pathTemplateOrParams, maybeParams , {...rootConfig, ...config});
 }
 
-function urlcatImpl(pathTemplate: string, params: ParamMap, baseUrl?: string, config: UrlCatConfiguration = {}) {
+function urlcatImpl(pathTemplate: string, params: ParamMap, baseUrl: string | undefined, config: UrlCatConfiguration) {
   const { renderedPath, remainingParams } = path(pathTemplate, params);
   const cleanParams = removeNullOrUndef(remainingParams);
   const renderedQuery = query(cleanParams, config);
