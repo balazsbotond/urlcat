@@ -1,6 +1,6 @@
 import qs, {IStringifyOptions} from 'qs';
 
-export type ParamMap = Record<string, any>;
+export type ParamMap = Record<string, string>;
 export type UrlCatConfiguration = Partial<Pick<IStringifyOptions, 'arrayFormat'> & {objectFormat: Partial<Pick<IStringifyOptions, 'format'>>}>
 
 /**
@@ -106,7 +106,7 @@ export default function urlcat(baseUrlOrTemplate: string, pathTemplateOrParams: 
  * ```
  */
 export function configure(rootConfig: UrlCatConfiguration) {
-  return (baseUrlOrTemplate: string, pathTemplateOrParams: string | ParamMap, maybeParams: ParamMap = {}, config: UrlCatConfiguration = {}) =>
+  return (baseUrlOrTemplate: string, pathTemplateOrParams: string | ParamMap, maybeParams: ParamMap = {}, config: UrlCatConfiguration = {}): string =>
     urlcat(baseUrlOrTemplate, pathTemplateOrParams, maybeParams , {...rootConfig, ...config});
 }
 
@@ -171,7 +171,7 @@ function path(template: string, params: ParamMap) {
     if (/^\d+$/.test(key)) {
       return p;
     }
-    if (!params.hasOwnProperty(key)) {
+    if (!Object.prototype.hasOwnProperty.call(params, key)) {
       throw new Error(`Missing value for path parameter ${key}.`);
     }
     if (!allowedTypes.includes(typeof params[key])) {
@@ -207,7 +207,7 @@ function path(template: string, params: ParamMap) {
  * // -> 'first/second'
  * ```
  */
-export function join(part1: string, separator: string, part2: string) {
+export function join(part1: string, separator: string, part2: string): string {
   const p1 = part1.endsWith(separator)
     ? part1.slice(0, -separator.length)
     : part1;
@@ -228,6 +228,6 @@ function removeNullOrUndef(params: ParamMap) {
     }, {} as ParamMap);
 }
 
-function notNullOrUndefined(v: any) {
+function notNullOrUndefined(v: string) {
   return v !== undefined && v !== null;
 }
