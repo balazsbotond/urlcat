@@ -333,7 +333,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <td align="center"><a href="http://@engrkhizariqbal"><img src="https://avatars0.githubusercontent.com/u/5228711?v=4" width="100px;" alt=""/><br /><sub><b>Khizar Iqbal</b></sub></a><br /><a href="#ideas-EngrKhizarIqbal" title="Ideas, Planning, & Feedback">🤔</a></td>
   </tr>
   <tr>
-    <td align="center"><a href="https://github.com/SimonJang"><img src="https://avatars2.githubusercontent.com/u/10977475?v=4" width="100px;" alt=""/><br /><sub><b>Simon Jang</b></sub></a><br /><a href="#ideas-SimonJang" title="Ideas, Planning, & Feedback">🤔</a></td>
+    <td align="center"><a href="https://github.com/SimonJang"><img src="https://avatars2.githubusercontent.com/u/10977475?v=4" width="100px;" alt=""/><br /><sub><b>Simon Jang</b></sub></a><br /><a href="#ideas-SimonJang" title="Ideas, Planning, & Feedback">🤔</a> <a href="https://github.com/balazsbotond/urlcat/commits?author=SimonJang" title="Code">💻</a></td>
   </tr>
 </table>
 
