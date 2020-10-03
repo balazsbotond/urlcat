@@ -106,7 +106,7 @@ export default function urlcat(baseUrlOrTemplate: string, pathTemplateOrParams: 
  * ```
  */
 export function configure(rootConfig: UrlCatConfiguration) {
-  return (baseUrlOrTemplate: string, pathTemplateOrParams: string | ParamMap, maybeParams: ParamMap = {}, config: UrlCatConfiguration = {}) => 
+  return (baseUrlOrTemplate: string, pathTemplateOrParams: string | ParamMap, maybeParams: ParamMap = {}, config: UrlCatConfiguration = {}) =>
     urlcat(baseUrlOrTemplate, pathTemplateOrParams, maybeParams , {...rootConfig, ...config});
 }
 
