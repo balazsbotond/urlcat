@@ -63,7 +63,8 @@
       "avatar_url": "https://avatars3.githubusercontent.com/u/30530587?v=4",
       "profile": "https://github.com/praveen5959",
       "contributions": [
-        "ideas"
+        "ideas",
+        "doc"
       ]
     },
     {
@@ -81,7 +82,8 @@
       "avatar_url": "https://avatars2.githubusercontent.com/u/10977475?v=4",
       "profile": "https://github.com/SimonJang",
       "contributions": [
-        "ideas"
+        "ideas",
+        "code"
       ]
     },
     {
@@ -100,6 +102,53 @@
       "profile": "https://www.echooff.dev",
       "contributions": [
         "doc"
+      ]
+    },
+    {
+      "login": "withoutwaxaryan",
+      "name": "Aryan Gupta",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/42470695?v=4",
+      "profile": "https://www.linkedin.com/in/wwaryangupta/",
+      "contributions": [
+        "doc"
+      ]
+    },
+    {
+      "login": "jasonk",
+      "name": "Jason Kohles",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/46860?v=4",
+      "profile": "http://www.jasonkohles.com",
+      "contributions": [
+        "bug",
+        "code"
+      ]
+    },
+    {
+      "login": "tiago154",
+      "name": "Tiago Santos Da Silva",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/10531605?v=4",
+      "profile": "https://www.linkedin.com/in/tiago-santos-da-silva-328a63ba/",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "tcarrio",
+      "name": "Tom",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/8659099?v=4",
+      "profile": "https://tom.carrio.me",
+      "contributions": [
+        "code",
+        "infra"
+      ]
+    },
+    {
+      "login": "drishit96",
+      "name": "Drishit Mitra",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/13049630?v=4",
+      "profile": "https://github.com/drishit96",
+      "contributions": [
+        "infra"
       ]
     }
   ],

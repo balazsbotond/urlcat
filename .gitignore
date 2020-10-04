@@ -3,3 +3,4 @@
 /dist-test
 /.nyc_output
 /coverage
+.vscode
