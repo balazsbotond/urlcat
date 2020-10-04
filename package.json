@@ -16,7 +16,7 @@
     "prebuild": "npm run clean",
     "build": "tsc -p .",
     "test": "jest",
-    "lint": "tslint -c tslint.json 'src/**/*.ts'",
+    "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
     "coverage": "cat ./coverage/lcov.info | coveralls",
     "prepublish": "npm test && npm run build"
   },
@@ -36,7 +36,10 @@
   "devDependencies": {
     "@types/jest": "26.0.14",
     "@types/qs": "6.9.5",
+    "@typescript-eslint/eslint-plugin": "4.3.0",
+    "@typescript-eslint/parser": "4.3.0",
     "coveralls": "3.1.0",
+    "eslint": "7.10.0",
     "jest": "26.4.2",
     "shx": "0.3.2",
     "ts-jest": "26.4.1",
