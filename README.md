@@ -320,7 +320,7 @@ Happy hacking!
 ## Contributors ✨
 
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-14-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-15-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
@@ -346,6 +346,9 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <td align="center"><a href="http://www.jasonkohles.com"><img src="https://avatars3.githubusercontent.com/u/46860?v=4" width="100px;" alt=""/><br /><sub><b>Jason Kohles</b></sub></a><br /><a href="https://github.com/balazsbotond/urlcat/issues?q=author%3Ajasonk" title="Bug reports">🐛</a> <a href="https://github.com/balazsbotond/urlcat/commits?author=jasonk" title="Code">💻</a></td>
     <td align="center"><a href="https://www.linkedin.com/in/tiago-santos-da-silva-328a63ba/"><img src="https://avatars2.githubusercontent.com/u/10531605?v=4" width="100px;" alt=""/><br /><sub><b>Tiago Santos Da Silva</b></sub></a><br /><a href="https://github.com/balazsbotond/urlcat/commits?author=tiago154" title="Code">💻</a></td>
     <td align="center"><a href="https://tom.carrio.me"><img src="https://avatars0.githubusercontent.com/u/8659099?v=4" width="100px;" alt=""/><br /><sub><b>Tom</b></sub></a><br /><a href="https://github.com/balazsbotond/urlcat/commits?author=tcarrio" title="Code">💻</a> <a href="#infra-tcarrio" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a></td>
+  </tr>
+  <tr>
+    <td align="center"><a href="https://github.com/drishit96"><img src="https://avatars1.githubusercontent.com/u/13049630?v=4" width="100px;" alt=""/><br /><sub><b>Drishit Mitra</b></sub></a><br /><a href="#infra-drishit96" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a></td>
   </tr>
 </table>
 

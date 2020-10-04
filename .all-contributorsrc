@@ -141,6 +141,15 @@
         "code",
         "infra"
       ]
+    },
+    {
+      "login": "drishit96",
+      "name": "Drishit Mitra",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/13049630?v=4",
+      "profile": "https://github.com/drishit96",
+      "contributions": [
+        "infra"
+      ]
     }
   ],
   "contributorsPerLine": 7,
