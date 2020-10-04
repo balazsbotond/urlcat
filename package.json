@@ -18,7 +18,8 @@
     "test": "jest",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
     "coverage": "cat ./coverage/lcov.info | coveralls",
-    "prepublish": "npm test && npm run build"
+    "prepublish": "npm test && npm run build",
+    "docs": "docsify serve docs --open"
   },
   "keywords": [
     "url",
@@ -44,6 +45,7 @@
     "shx": "0.3.2",
     "ts-jest": "26.4.1",
     "tslint": "6.1.3",
-    "typescript": "4.0.3"
+    "typescript": "4.0.3",
+    "docsify-cli": "^4.4.1"
   }
 }
