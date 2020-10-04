@@ -22,7 +22,8 @@
     "test": "nyc --reporter html --reporter text mocha --timeout 10000 --exit 'dist-test/test/**/*.js'",
     "lint": "tslint -c tslint.json 'src/**/*.ts'",
     "coverage": "nyc report --reporter text-lcov | coveralls",
-    "prepublish": "npm test && npm run build"
+    "prepublish": "npm test && npm run build",
+    "docs": "docsify serve docs --open"
   },
   "keywords": [
     "url",
@@ -40,6 +41,7 @@
     "@types/mocha": "8.0.3",
     "chai": "4.2.0",
     "coveralls": "3.1.0",
+    "docsify-cli": "^4.4.1",
     "mocha": "8.1.3",
     "mocha-lcov-reporter": "1.3.0",
     "nyc": "15.1.0",
