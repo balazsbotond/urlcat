@@ -1,3 +1,4 @@
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export type ParamMap = Record<string, any>;
 
 /**
@@ -180,6 +181,6 @@ function removeNullOrUndef(params: ParamMap) {
     }, {} as ParamMap);
 }
 
-function notNullOrUndefined(v: any) {
+function notNullOrUndefined<T>(v: T | null | undefined): v is T {
   return v !== undefined && v !== null;
 }

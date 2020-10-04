@@ -1,0 +1,4 @@
+FROM hayd/ubuntu-deno:latest
+COPY ./ /app
+WORKDIR /app
+ENTRYPOINT ["deno"]
