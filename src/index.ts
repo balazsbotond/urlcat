@@ -1,4 +1,4 @@
-import qs, {IStringifyOptions} from 'qs';
+import qs, { IStringifyOptions } from 'qs';
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export type ParamMap = Record<string, any>;
@@ -108,7 +108,7 @@ export default function urlcat(baseUrlOrTemplate: string, pathTemplateOrParams: 
  */
 export function configure(rootConfig: UrlCatConfiguration) {
   return (baseUrlOrTemplate: string, pathTemplateOrParams: string | ParamMap, maybeParams: ParamMap = {}, config: UrlCatConfiguration = {}): string =>
-    urlcat(baseUrlOrTemplate, pathTemplateOrParams, maybeParams , {...rootConfig, ...config});
+    urlcat(baseUrlOrTemplate, pathTemplateOrParams, maybeParams , { ...rootConfig, ...config });
 }
 
 function urlcatImpl(pathTemplate: string, params: ParamMap, baseUrl: string | undefined, config: UrlCatConfiguration) {
