@@ -167,11 +167,8 @@ function path(template: string, params: ParamMap) {
   const remainingParams = { ...params };
   const allowedTypes = ["boolean", "string", "number"];
 
-  const renderedPath = template.replace(/:\w+/g, p => {
+  const renderedPath = template.replace(/:[_A-Za-z][_A-Za-z0-9]*/g, p => {
     const key = p.slice(1);
-    if (/^\d+$/.test(key)) {
-      return p;
-    }
     if (!Object.prototype.hasOwnProperty.call(params, key)) {
       throw new Error(`Missing value for path parameter ${key}.`);
     }

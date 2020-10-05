@@ -166,4 +166,14 @@ describe('urlcat', () => {
     expect(() => urlcat('http://example.com/path/:p', { p: "  " }))
       .toThrowError("Path parameter p cannot be an empty string.");
   });
+
+  it('Allows port numbers in path params', () => {
+    expect(urlcat('http://example.com:8080/path/:p', { p: 1 }))
+      .toBe('http://example.com:8080/path/1');
+  });
+
+  it('Ignores path params which start with a number', () => {
+    expect(urlcat('http://example.com:8080/path/:1/:2/:p', { '1': 1, '2': 2, p: 3 }))
+      .toBe('http://example.com:8080/path/:1/:2/3?1=1&2=2');
+  });
 });
