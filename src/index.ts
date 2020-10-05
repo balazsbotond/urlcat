@@ -165,7 +165,7 @@ export function subst(template: string, params: ParamMap): string {
 
 function path(template: string, params: ParamMap) {
   const remainingParams = { ...params };
-  const allowedTypes = ["boolean", "string", "number"];
+  const allowedTypes = ['boolean', 'string', 'number'];
 
   const renderedPath = template.replace(/:[_A-Za-z][_A-Za-z0-9]*/g, p => {
     const key = p.slice(1);
@@ -178,7 +178,7 @@ function path(template: string, params: ParamMap) {
         `Allowed types are: ${allowedTypes.join(', ')}.`
       );
     }
-    if (typeof params[key] === "string" && params[key].trim() === '') {
+    if (typeof params[key] === 'string' && params[key].trim() === '') {
       throw new Error(`Path parameter ${key} cannot be an empty string.`);
     }
     delete remainingParams[key];
