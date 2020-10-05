@@ -189,27 +189,32 @@ export function subst(template: string, params: ParamMap): string {
 
 function path(template: string, params: ParamMap) {
   const remainingParams = { ...params };
-  const allowedTypes = ['boolean', 'string', 'number'];
 
   const renderedPath = template.replace(/:[_A-Za-z][_A-Za-z0-9]*/g, p => {
     const key = p.slice(1);
-    if (!Object.prototype.hasOwnProperty.call(params, key)) {
-      throw new Error(`Missing value for path parameter ${key}.`);
-    }
-    if (!allowedTypes.includes(typeof params[key])) {
-      throw new TypeError(
-        `Path parameter ${key} cannot be of type ${typeof params[key]}. ` +
-        `Allowed types are: ${allowedTypes.join(', ')}.`
-      );
-    }
-    if (typeof params[key] === 'string' && params[key].trim() === '') {
-      throw new Error(`Path parameter ${key} cannot be an empty string.`);
-    }
+    validatePathParam(params, key);
     delete remainingParams[key];
     return encodeURIComponent(params[key]);
   });
 
   return { renderedPath, remainingParams };
+}
+
+function validatePathParam(params: ParamMap, key: string) {
+  const allowedTypes = ['boolean', 'string', 'number'];
+
+  if (!Object.prototype.hasOwnProperty.call(params, key)) {
+    throw new Error(`Missing value for path parameter ${key}.`);
+  }
+  if (!allowedTypes.includes(typeof params[key])) {
+    throw new TypeError(
+      `Path parameter ${key} cannot be of type ${typeof params[key]}. ` +
+      `Allowed types are: ${allowedTypes.join(', ')}.`
+    );
+  }
+  if (typeof params[key] === 'string' && params[key].trim() === '') {
+    throw new Error(`Path parameter ${key} cannot be an empty string.`);
+  }
 }
 
 /**
