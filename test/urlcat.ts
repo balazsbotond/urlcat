@@ -134,37 +134,37 @@ describe('urlcat', () => {
 
   it('Throws if a path param is an object', () => {
     expect(() => urlcat('http://example.com/path/:p', { p: {} }))
-      .toThrowError("Path parameter p cannot be of type object. Allowed types are: boolean, string, number.");
+      .toThrowError('Path parameter p cannot be of type object. Allowed types are: boolean, string, number.');
   });
 
   it('Throws if a path param is an array', () => {
     expect(() => urlcat('http://example.com/path/:p/:q', { p: [] }))
-      .toThrowError("Path parameter p cannot be of type object. Allowed types are: boolean, string, number.");
+      .toThrowError('Path parameter p cannot be of type object. Allowed types are: boolean, string, number.');
   });
 
   it('Throws if a path param is a symbol', () => {
     expect(() => urlcat('http://example.com/path/:p', { p: Symbol() }))
-      .toThrowError("Path parameter p cannot be of type symbol. Allowed types are: boolean, string, number.");
+      .toThrowError('Path parameter p cannot be of type symbol. Allowed types are: boolean, string, number.');
   });
 
   it('Throws if a path param is undefined', () => {
     expect(() => urlcat('http://example.com/path/:p', { p: undefined }))
-      .toThrowError("Path parameter p cannot be of type undefined. Allowed types are: boolean, string, number.");
+      .toThrowError('Path parameter p cannot be of type undefined. Allowed types are: boolean, string, number.');
   });
 
   it('Throws if a path param is null', () => {
     expect(() => urlcat('http://example.com/path/:p', { p: null }))
-      .toThrowError("Path parameter p cannot be of type object. Allowed types are: boolean, string, number.");
+      .toThrowError('Path parameter p cannot be of type object. Allowed types are: boolean, string, number.');
   });
 
   it('Throws if a path param is an empty string', () => {
-    expect(() => urlcat('http://example.com/path/:p', { p: "" }))
-      .toThrowError("Path parameter p cannot be an empty string.");
+    expect(() => urlcat('http://example.com/path/:p', { p: '' }))
+      .toThrowError('Path parameter p cannot be an empty string.');
   });
 
   it('Throws if a path param contains only whitespace', () => {
-    expect(() => urlcat('http://example.com/path/:p', { p: "  " }))
-      .toThrowError("Path parameter p cannot be an empty string.");
+    expect(() => urlcat('http://example.com/path/:p', { p: '  ' }))
+      .toThrowError('Path parameter p cannot be an empty string.');
   });
 
   it('Allows port numbers in path params', () => {

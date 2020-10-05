@@ -1,6 +1,6 @@
 module.exports = {
   env: {
-    "node": true
+    'node': true
   },
   root: true,
   parser: '@typescript-eslint/parser',
@@ -14,5 +14,6 @@ module.exports = {
   rules: {
     'object-curly-spacing': ['error', 'always'],
     'array-bracket-spacing': ['error', 'never'],
+    'quotes': ['error', 'single'],
   }
 };
