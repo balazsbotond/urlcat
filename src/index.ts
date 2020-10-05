@@ -2,7 +2,8 @@ import qs, { IStringifyOptions } from 'qs';
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export type ParamMap = Record<string, any>;
-export type UrlCatConfiguration = Partial<Pick<IStringifyOptions, 'arrayFormat'> & {objectFormat: Partial<Pick<IStringifyOptions, 'format'>>}>
+export type UrlCatConfiguration =
+  Partial<Pick<IStringifyOptions, 'arrayFormat'> & { objectFormat: Partial<Pick<IStringifyOptions, 'format'>> }>
 
 /**
  * Builds a URL using the base template and specified parameters.
@@ -57,7 +58,11 @@ export default function urlcat(baseUrl: string, path: string): string;
  * // -> 'http://api.example.com/users/42?search=foo
  * ```
  */
-export default function urlcat(baseUrl: string, pathTemplate: string, params: ParamMap): string;
+export default function urlcat(
+  baseUrl: string,
+  pathTemplate: string,
+  params: ParamMap
+): string;
 
 /**
  * Concatenates the base URL and the path specified using '/' as a separator.
@@ -79,9 +84,19 @@ export default function urlcat(baseUrl: string, pathTemplate: string, params: Pa
  * // -> 'http://api.example.com/users/42?search=foo
  * ```
  */
-export default function urlcat(baseUrlOrTemplate: string, pathTemplateOrParams: string | ParamMap, maybeParams: ParamMap, config: UrlCatConfiguration): string;
+export default function urlcat(
+  baseUrlOrTemplate: string,
+  pathTemplateOrParams: string | ParamMap,
+  maybeParams: ParamMap,
+  config: UrlCatConfiguration
+): string;
 
-export default function urlcat(baseUrlOrTemplate: string, pathTemplateOrParams: string | ParamMap, maybeParams: ParamMap = {}, config: UrlCatConfiguration = {}): string {
+export default function urlcat(
+  baseUrlOrTemplate: string,
+  pathTemplateOrParams: string | ParamMap,
+  maybeParams: ParamMap = {},
+  config: UrlCatConfiguration = {}
+): string {
   if (typeof pathTemplateOrParams === 'string') {
     const baseUrl = baseUrlOrTemplate;
     const pathTemplate = pathTemplateOrParams;
@@ -107,11 +122,20 @@ export default function urlcat(baseUrlOrTemplate: string, pathTemplateOrParams: 
  * ```
  */
 export function configure(rootConfig: UrlCatConfiguration) {
-  return (baseUrlOrTemplate: string, pathTemplateOrParams: string | ParamMap, maybeParams: ParamMap = {}, config: UrlCatConfiguration = {}): string =>
+  return (
+    baseUrlOrTemplate: string,
+    pathTemplateOrParams: string | ParamMap,
+    maybeParams: ParamMap = {}, config: UrlCatConfiguration = {}
+  ): string =>
     urlcat(baseUrlOrTemplate, pathTemplateOrParams, maybeParams , { ...rootConfig, ...config });
 }
 
-function urlcatImpl(pathTemplate: string, params: ParamMap, baseUrl: string | undefined, config: UrlCatConfiguration) {
+function urlcatImpl(
+  pathTemplate: string,
+  params: ParamMap,
+  baseUrl: string | undefined,
+  config: UrlCatConfiguration
+) {
   const { renderedPath, remainingParams } = path(pathTemplate, params);
   const cleanParams = removeNullOrUndef(remainingParams);
   const renderedQuery = query(cleanParams, config);
