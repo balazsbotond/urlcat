@@ -320,7 +320,7 @@ Happy hacking!
 ## Contributors ✨
 
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-15-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-16-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
@@ -349,6 +349,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
   </tr>
   <tr>
     <td align="center"><a href="https://github.com/drishit96"><img src="https://avatars1.githubusercontent.com/u/13049630?v=4" width="100px;" alt=""/><br /><sub><b>Drishit Mitra</b></sub></a><br /><a href="#infra-drishit96" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a></td>
+    <td align="center"><a href="https://github.com/sakshi2912"><img src="https://avatars3.githubusercontent.com/u/51375116?v=4" width="100px;" alt=""/><br /><sub><b>Sakshi Vattikuti</b></sub></a><br /><a href="https://github.com/balazsbotond/urlcat/commits?author=sakshi2912" title="Documentation">📖</a></td>
   </tr>
 </table>
 
