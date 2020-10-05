@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="cat.svg" alt="Markdownify">
+</p>
+
 - Getting started
   
   - [Quick start](/)

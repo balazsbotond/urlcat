@@ -1,9 +1,5 @@
 <h1 align="center">
-  <br>
-  <img src="docs/cat.svg" alt="Markdownify">
-  <br>
   urlcat
-  <br>
 </h1>
 
 <h4 align="center">Build correct URLs easily.</h4>
