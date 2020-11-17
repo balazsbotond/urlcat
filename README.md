@@ -9,10 +9,6 @@
 <h4 align="center">Build correct URLs easily.</h4>
 
 <p align="center">
-  <a href="CONTRIBUTING.md">
-    <img src="https://badgen.net/badge/hacktoberfest/friendly/purple"
-         alt="Hacktoberfest Friendly">
-  </a> 
   <a href="https://travis-ci.com/balazsbotond/urlcat">
     <img src="https://travis-ci.com/balazsbotond/urlcat.svg?branch=master"
          alt="Build Status">
