@@ -139,9 +139,10 @@ function urlcatImpl(
   const { renderedPath, remainingParams } = path(pathTemplate, params);
   const cleanParams = removeNullOrUndef(remainingParams);
   const renderedQuery = query(cleanParams, config);
-  const pathAndQuery = join(renderedPath, '?', renderedQuery);
+  const pathAndQuery = join(renderedPath.trim(), '?', renderedQuery);
+
   return baseUrl
-    ? join(baseUrl, '/', pathAndQuery)
+    ? renderedPath.trim().length ? join(baseUrl, '/', pathAndQuery) : join(baseUrl, '?', pathAndQuery)
     : pathAndQuery;
 }
 
