@@ -35,12 +35,12 @@
     "qs": "^6.9.4"
   },
   "devDependencies": {
-    "@types/jest": "26.0.15",
+    "@types/jest": "26.0.18",
     "@types/qs": "6.9.5",
-    "@typescript-eslint/eslint-plugin": "4.8.2",
-    "@typescript-eslint/parser": "4.8.2",
+    "@typescript-eslint/eslint-plugin": "4.9.1",
+    "@typescript-eslint/parser": "4.9.1",
     "coveralls": "3.1.0",
-    "eslint": "7.14.0",
+    "eslint": "7.15.0",
     "jest": "26.6.3",
     "shx": "0.3.3",
     "ts-jest": "26.4.4",
