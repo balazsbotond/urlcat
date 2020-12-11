@@ -127,7 +127,15 @@ export function configure(rootConfig: UrlCatConfiguration) {
     pathTemplateOrParams: string | ParamMap,
     maybeParams: ParamMap = {}, config: UrlCatConfiguration = {}
   ): string =>
-    urlcat(baseUrlOrTemplate, pathTemplateOrParams, maybeParams , { ...rootConfig, ...config });
+    urlcat(baseUrlOrTemplate, pathTemplateOrParams, maybeParams, { ...rootConfig, ...config });
+}
+
+function joinFullUrl(renderedPath: string, baseUrl: string, pathAndQuery: string): string {
+  if (renderedPath.length) {
+    return join(baseUrl, '/', pathAndQuery);
+  } else {
+    return join(baseUrl, '?', pathAndQuery);
+  }
 }
 
 function urlcatImpl(
@@ -140,9 +148,8 @@ function urlcatImpl(
   const cleanParams = removeNullOrUndef(remainingParams);
   const renderedQuery = query(cleanParams, config);
   const pathAndQuery = join(renderedPath, '?', renderedQuery);
-  return baseUrl
-    ? join(baseUrl, '/', pathAndQuery)
-    : pathAndQuery;
+
+  return baseUrl ? joinFullUrl(renderedPath, baseUrl, pathAndQuery) : pathAndQuery;
 }
 
 /**
