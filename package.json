@@ -35,7 +35,7 @@
     "qs": "^6.9.4"
   },
   "devDependencies": {
-    "@types/jest": "26.0.18",
+    "@types/jest": "26.0.19",
     "@types/qs": "6.9.5",
     "@typescript-eslint/eslint-plugin": "4.9.1",
     "@typescript-eslint/parser": "4.9.1",
