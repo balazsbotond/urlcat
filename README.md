@@ -9,10 +9,6 @@
 <h4 align="center">Build correct URLs easily.</h4>
 
 <p align="center">
-  <a href="CONTRIBUTING.md">
-    <img src="https://badgen.net/badge/hacktoberfest/friendly/purple"
-         alt="Hacktoberfest Friendly">
-  </a> 
   <a href="https://travis-ci.com/balazsbotond/urlcat">
     <img src="https://travis-ci.com/balazsbotond/urlcat.svg?branch=master"
          alt="Build Status">
@@ -320,7 +316,7 @@ Happy hacking!
 ## Contributors ✨
 
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-13-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-17-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
@@ -336,15 +332,21 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <td align="center"><a href="https://github.com/harshilparmar"><img src="https://avatars3.githubusercontent.com/u/45915468?v=4" width="100px;" alt=""/><br /><sub><b>Harshil Parmar</b></sub></a><br /><a href="https://github.com/balazsbotond/urlcat/commits?author=harshilparmar" title="Code">💻</a></td>
     <td align="center"><a href="https://knpw.rs"><img src="https://avatars0.githubusercontent.com/u/174864?v=4" width="100px;" alt=""/><br /><sub><b>Ken Powers</b></sub></a><br /><a href="#platform-knpwrs" title="Packaging/porting to new platform">📦</a> <a href="#userTesting-knpwrs" title="User Testing">📓</a></td>
     <td align="center"><a href="https://github.com/praveen5959"><img src="https://avatars3.githubusercontent.com/u/30530587?v=4" width="100px;" alt=""/><br /><sub><b>Praveen K B</b></sub></a><br /><a href="#ideas-praveen5959" title="Ideas, Planning, & Feedback">🤔</a> <a href="https://github.com/balazsbotond/urlcat/commits?author=praveen5959" title="Documentation">📖</a></td>
-    <td align="center"><a href="http://@engrkhizariqbal"><img src="https://avatars0.githubusercontent.com/u/5228711?v=4" width="100px;" alt=""/><br /><sub><b>Khizar Iqbal</b></sub></a><br /><a href="#ideas-EngrKhizarIqbal" title="Ideas, Planning, & Feedback">🤔</a></td>
+    <td align="center"><a href="http://@engrkhizariqbal"><img src="https://avatars0.githubusercontent.com/u/5228711?v=4" width="100px;" alt=""/><br /><sub><b>Khizar Iqbal</b></sub></a><br /><a href="#ideas-EngrKhizarIqbal" title="Ideas, Planning, & Feedback">🤔</a> <a href="#infra-EngrKhizarIqbal" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a></td>
   </tr>
   <tr>
-    <td align="center"><a href="https://github.com/SimonJang"><img src="https://avatars2.githubusercontent.com/u/10977475?v=4" width="100px;" alt=""/><br /><sub><b>Simon Jang</b></sub></a><br /><a href="#ideas-SimonJang" title="Ideas, Planning, & Feedback">🤔</a></td>
+    <td align="center"><a href="https://github.com/SimonJang"><img src="https://avatars2.githubusercontent.com/u/10977475?v=4" width="100px;" alt=""/><br /><sub><b>Simon Jang</b></sub></a><br /><a href="#ideas-SimonJang" title="Ideas, Planning, & Feedback">🤔</a> <a href="https://github.com/balazsbotond/urlcat/commits?author=SimonJang" title="Code">💻</a></td>
     <td align="center"><a href="https://luyu.blog"><img src="https://avatars0.githubusercontent.com/u/2239547?v=4" width="100px;" alt=""/><br /><sub><b>Luyu Cheng</b></sub></a><br /><a href="https://github.com/balazsbotond/urlcat/commits?author=chengluyu" title="Documentation">📖</a></td>
     <td align="center"><a href="https://www.echooff.dev"><img src="https://avatars0.githubusercontent.com/u/149248?v=4" width="100px;" alt=""/><br /><sub><b>Christian Rackerseder</b></sub></a><br /><a href="https://github.com/balazsbotond/urlcat/commits?author=screendriver" title="Documentation">📖</a></td>
     <td align="center"><a href="https://www.linkedin.com/in/wwaryangupta/"><img src="https://avatars3.githubusercontent.com/u/42470695?v=4" width="100px;" alt=""/><br /><sub><b>Aryan Gupta</b></sub></a><br /><a href="https://github.com/balazsbotond/urlcat/commits?author=withoutwaxaryan" title="Documentation">📖</a></td>
     <td align="center"><a href="http://www.jasonkohles.com"><img src="https://avatars3.githubusercontent.com/u/46860?v=4" width="100px;" alt=""/><br /><sub><b>Jason Kohles</b></sub></a><br /><a href="https://github.com/balazsbotond/urlcat/issues?q=author%3Ajasonk" title="Bug reports">🐛</a> <a href="https://github.com/balazsbotond/urlcat/commits?author=jasonk" title="Code">💻</a></td>
     <td align="center"><a href="https://www.linkedin.com/in/tiago-santos-da-silva-328a63ba/"><img src="https://avatars2.githubusercontent.com/u/10531605?v=4" width="100px;" alt=""/><br /><sub><b>Tiago Santos Da Silva</b></sub></a><br /><a href="https://github.com/balazsbotond/urlcat/commits?author=tiago154" title="Code">💻</a></td>
+    <td align="center"><a href="https://tom.carrio.me"><img src="https://avatars0.githubusercontent.com/u/8659099?v=4" width="100px;" alt=""/><br /><sub><b>Tom</b></sub></a><br /><a href="https://github.com/balazsbotond/urlcat/commits?author=tcarrio" title="Code">💻</a> <a href="#infra-tcarrio" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a></td>
+  </tr>
+  <tr>
+    <td align="center"><a href="https://github.com/drishit96"><img src="https://avatars1.githubusercontent.com/u/13049630?v=4" width="100px;" alt=""/><br /><sub><b>Drishit Mitra</b></sub></a><br /><a href="#infra-drishit96" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a></td>
+    <td align="center"><a href="https://github.com/sakshi2912"><img src="https://avatars3.githubusercontent.com/u/51375116?v=4" width="100px;" alt=""/><br /><sub><b>Sakshi Vattikuti</b></sub></a><br /><a href="https://github.com/balazsbotond/urlcat/commits?author=sakshi2912" title="Documentation">📖</a></td>
+    <td align="center"><a href="https://github.com/3zk1m0"><img src="https://avatars3.githubusercontent.com/u/19320956?v=4" width="100px;" alt=""/><br /><sub><b>3zk1m0</b></sub></a><br /><a href="#ideas-3zk1m0" title="Ideas, Planning, & Feedback">🤔</a></td>
   </tr>
 </table>
 
