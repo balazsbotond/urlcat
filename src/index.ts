@@ -127,7 +127,15 @@ export function configure(rootConfig: UrlCatConfiguration) {
     pathTemplateOrParams: string | ParamMap,
     maybeParams: ParamMap = {}, config: UrlCatConfiguration = {}
   ): string =>
-    urlcat(baseUrlOrTemplate, pathTemplateOrParams, maybeParams , { ...rootConfig, ...config });
+    urlcat(baseUrlOrTemplate, pathTemplateOrParams, maybeParams, { ...rootConfig, ...config });
+}
+
+function isValidRenderedPath(renderedPath: string, baseUrl: string, pathAndQuery: string): string {
+  if (renderedPath.length) {
+    return join(baseUrl, '/', pathAndQuery);
+  } else {
+    return join(baseUrl, '?', pathAndQuery);
+  }
 }
 
 function urlcatImpl(
@@ -139,11 +147,9 @@ function urlcatImpl(
   const { renderedPath, remainingParams } = path(pathTemplate, params);
   const cleanParams = removeNullOrUndef(remainingParams);
   const renderedQuery = query(cleanParams, config);
-  const pathAndQuery = join(renderedPath.trim(), '?', renderedQuery);
+  const pathAndQuery = join(renderedPath, '?', renderedQuery);
 
-  return baseUrl
-    ? renderedPath.trim().length ? join(baseUrl, '/', pathAndQuery) : join(baseUrl, '?', pathAndQuery)
-    : pathAndQuery;
+  return baseUrl ? isValidRenderedPath(renderedPath, baseUrl, pathAndQuery) : pathAndQuery;
 }
 
 /**
