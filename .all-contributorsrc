@@ -169,6 +169,15 @@
       "contributions": [
         "ideas"
       ]
+    },
+    {
+      "login": "SeinopSys",
+      "name": "David Joseph Guzsik",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/3200580?v=4",
+      "profile": "https://seinopsys.dev/",
+      "contributions": [
+        "review"
+      ]
     }
   ],
   "contributorsPerLine": 7,

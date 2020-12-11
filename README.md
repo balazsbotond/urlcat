@@ -316,7 +316,7 @@ Happy hacking!
 ## Contributors ✨
 
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-17-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-18-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
@@ -347,6 +347,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <td align="center"><a href="https://github.com/drishit96"><img src="https://avatars1.githubusercontent.com/u/13049630?v=4" width="100px;" alt=""/><br /><sub><b>Drishit Mitra</b></sub></a><br /><a href="#infra-drishit96" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a></td>
     <td align="center"><a href="https://github.com/sakshi2912"><img src="https://avatars3.githubusercontent.com/u/51375116?v=4" width="100px;" alt=""/><br /><sub><b>Sakshi Vattikuti</b></sub></a><br /><a href="https://github.com/balazsbotond/urlcat/commits?author=sakshi2912" title="Documentation">📖</a></td>
     <td align="center"><a href="https://github.com/3zk1m0"><img src="https://avatars3.githubusercontent.com/u/19320956?v=4" width="100px;" alt=""/><br /><sub><b>3zk1m0</b></sub></a><br /><a href="#ideas-3zk1m0" title="Ideas, Planning, & Feedback">🤔</a></td>
+    <td align="center"><a href="https://seinopsys.dev/"><img src="https://avatars1.githubusercontent.com/u/3200580?v=4" width="100px;" alt=""/><br /><sub><b>David Joseph Guzsik</b></sub></a><br /><a href="https://github.com/balazsbotond/urlcat/pulls?q=is%3Apr+reviewed-by%3ASeinopSys" title="Reviewed Pull Requests">👀</a></td>
   </tr>
 </table>
 
