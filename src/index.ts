@@ -130,7 +130,7 @@ export function configure(rootConfig: UrlCatConfiguration) {
     urlcat(baseUrlOrTemplate, pathTemplateOrParams, maybeParams, { ...rootConfig, ...config });
 }
 
-function isValidRenderedPath(renderedPath: string, baseUrl: string, pathAndQuery: string): string {
+function joinFullUrl(renderedPath: string, baseUrl: string, pathAndQuery: string): string {
   if (renderedPath.length) {
     return join(baseUrl, '/', pathAndQuery);
   } else {
@@ -149,7 +149,7 @@ function urlcatImpl(
   const renderedQuery = query(cleanParams, config);
   const pathAndQuery = join(renderedPath, '?', renderedQuery);
 
-  return baseUrl ? isValidRenderedPath(renderedPath, baseUrl, pathAndQuery) : pathAndQuery;
+  return baseUrl ? joinFullUrl(renderedPath, baseUrl, pathAndQuery) : pathAndQuery;
 }
 
 /**
