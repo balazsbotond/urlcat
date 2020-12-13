@@ -82,9 +82,7 @@ function urlcatImpl(pathTemplate: string, params: ParamMap, baseUrl?: string) {
   const cleanParams = removeNullOrUndef(remainingParams);
   const renderedQuery = query(cleanParams);
   const pathAndQuery = join(renderedPath, '?', renderedQuery);
-  return baseUrl
-    ?  joinFullUrl(renderedPath, baseUrl, pathAndQuery) 
-    : pathAndQuery;
+  return baseUrl ? joinFullUrl(renderedPath, baseUrl, pathAndQuery) : pathAndQuery;
 }
 
 /**
