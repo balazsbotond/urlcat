@@ -1,4 +1,5 @@
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
+// deno-lint-ignore no-explicit-any
 export type ParamMap = Record<string, any>;
 
 /**
