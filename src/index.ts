@@ -1,4 +1,5 @@
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
+// deno-lint-ignore no-explicit-any
 export type ParamMap = Record<string, any>;
 
 /**
@@ -69,14 +70,20 @@ export default function urlcat(baseUrlOrTemplate: string, pathTemplateOrParams: 
   }
 }
 
+function joinFullUrl(renderedPath: string, baseUrl: string, pathAndQuery: string): string {
+  if (renderedPath.length) {
+    return join(baseUrl, '/', pathAndQuery);
+  } else {
+    return join(baseUrl, '?', pathAndQuery);
+  }
+}
+
 function urlcatImpl(pathTemplate: string, params: ParamMap, baseUrl?: string) {
   const { renderedPath, remainingParams } = path(pathTemplate, params);
   const cleanParams = removeNullOrUndef(remainingParams);
   const renderedQuery = query(cleanParams);
   const pathAndQuery = join(renderedPath, '?', renderedQuery);
-  return baseUrl
-    ? join(baseUrl, '/', pathAndQuery)
-    : pathAndQuery;
+  return baseUrl ? joinFullUrl(renderedPath, baseUrl, pathAndQuery) : pathAndQuery;
 }
 
 /**

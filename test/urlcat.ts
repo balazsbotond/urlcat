@@ -102,6 +102,12 @@ describe('urlcat', () => {
     expect(actual).toBe(expected);
   });
 
+  it('Escape empty path params', () => {
+    const expected = 'http://example.com/path?p=a';
+    const actual = urlcat('http://example.com/path', '', { p: 'a' });
+    expect(actual).toBe(expected);
+  });
+  
   it('Renders boolean (true) path params', () => {
     const expected = 'http://example.com/path/true';
     const actual = urlcat('http://example.com/path/:p', { p: true });
