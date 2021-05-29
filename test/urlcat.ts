@@ -57,8 +57,8 @@ describe('urlcat', () => {
   });
 
   it('All parameters become query parameters if the path has no parameters', () => {
-    const expected = 'http://example.com/path';
-    const actual = urlcat('http://example.com/', '/path?', {});
+    const expected = 'http://example.com/path?p=1&q=2';
+    const actual = urlcat('http://example.com/', '/path?', { p: 1, q: 2 });
     expect(actual).toBe(expected);
   });
 
