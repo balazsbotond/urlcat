@@ -41,7 +41,7 @@
     "@typescript-eslint/parser": "4.14.1",
     "coveralls": "3.1.0",
     "eslint": "7.19.0",
-    "jest": "26.6.3",
+    "jest": "27.0.4",
     "shx": "0.3.3",
     "ts-jest": "26.5.0",
     "tslint": "6.1.3",
