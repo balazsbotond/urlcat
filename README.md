@@ -45,8 +45,8 @@
 
 Features:
 - Friendly API
-- No dependencies
-- 0.8 KB minified and gzipped
+- Only [one dependency](https://www.npmjs.com/package/qs)
+- 0.8KB [minified and gzipped](https://bundlephobia.com/package/urlcat@2.0.4)
 - TypeScript types provided
 
 ## Why?
