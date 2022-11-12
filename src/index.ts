@@ -167,6 +167,13 @@ function urlcatImpl(
  * ```
  */
 export function query(params: ParamMap, config?: UrlCatConfiguration): string {
+  /* NOTE: Handle quirk of `new UrlSearchParams(params).toString()` in Webkit 602.x.xx
+   *       versions which returns stringified object when params is empty object
+   */
+  if (Object.keys(params).length < 1) {
+    return ''
+  }
+
   const qsConfiguration: IStringifyOptions = {
     format: config?.objectFormat?.format ?? 'RFC1738', // RDC1738 is urlcat's current default. Breaking change if default is changed
     arrayFormat: config?.arrayFormat
@@ -197,7 +204,7 @@ export function subst(template: string, params: ParamMap): string {
 function path(template: string, params: ParamMap) {
   const remainingParams = { ...params };
 
-  const renderedPath = template.replace(/:[_A-Za-z][_A-Za-z0-9]*/g, p => {
+  const renderedPath = template.replace(/:[_A-Za-z]+[_A-Za-z0-9]*/g, p => {  // do not replace "::"
     const key = p.slice(1);
     validatePathParam(params, key);
     delete remainingParams[key];

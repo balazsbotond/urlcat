@@ -183,5 +183,9 @@ describe('urlcat', () => {
       .toBe('http://example.com:8080/path/:1/:2/3?1=1&2=2');
   });
 
+  it('Does not replace both colons', () => {
+    expect(urlcat('http::one://example.com:8080/path/:one/:two/:three', { one: 1, two: 2, three: 3 }))
+      .toBe('http:1://example.com:8080/path/1/2/3');
+  });
 
 });
