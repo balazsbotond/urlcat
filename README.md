@@ -9,8 +9,8 @@
 <h4 align="center">Build correct URLs easily.</h4>
 
 <p align="center">
-  <a href="https://travis-ci.com/balazsbotond/urlcat">
-    <img src="https://travis-ci.com/balazsbotond/urlcat.svg?branch=master"
+  <a href="https://github.com/balazsbotond/urlcat/actions">
+    <img src="https://github.com/balazsbotond/urlcat/actions/workflows/ci.yml/badge.svg"
          alt="Build Status">
   </a>
   <a href="https://www.npmjs.com/package/urlcat">
