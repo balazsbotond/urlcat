@@ -40,7 +40,8 @@
 
 <br>
 <p align="center">
-  <img src="docs/urlcat-basic-usage.svg">
+  <img src="docs/urlcat-basic-usage.svg#gh-light-mode-only">
+  <img src="docs/urlcat-basic-usage-dark.svg#gh-dark-mode-only">
 </p>
 
 Features:
