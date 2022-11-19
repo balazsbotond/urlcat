@@ -153,14 +153,6 @@ To use all exported functions:
 import urlcat, { query, subst, join } from 'urlcat';
 ```
 
-### Usage with Deno
-
-```ts
-import urlcat from 'https://deno.land/x/urlcat/src/index.ts';
-
-console.log(urlcat('https://api.foo.com', ':name', { id: 25, name: 'knpwrs' }));
-```
-
 ## TypeScript
 
 This library provides its own type definitions. "It just works", no need to install anything from `@types`.
