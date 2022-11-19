@@ -102,7 +102,7 @@ The library handles:
 
 ### Install
 
-Currently, the package is distributed via npm. (Zip downloads and a CDN are coming soon).
+Currently, the package is distributed via npm. Zip downloads are also available since v3.0.0 (A CDN is coming soon).
 
 ```bash
 npm install --save urlcat
@@ -110,8 +110,8 @@ npm install --save urlcat
 
 ### Usage with Node
 
-Node 10 and above are officially supported. 
-Since the code uses the `URL` and `URLSearchParams` classes internally, which aren't available below v10, we cannot support those versions.
+Node 14 and above are officially supported, though you may have luck using it with an earlier Node version.
+Since the code uses the `URL` and `URLSearchParams` classes internally, which aren't available below Node v10, the library is known not to work with those versions.
 
 To build full URLs (most common use case):
 
