@@ -41,7 +41,7 @@
     "@typescript-eslint/parser": "5.47.1",
     "coveralls": "3.1.1",
     "docsify-cli": "^4.0.0",
-    "eslint": "8.29.0",
+    "eslint": "8.31.0",
     "jest": "29.3.1",
     "shx": "0.3.4",
     "ts-jest": "29.0.3",
