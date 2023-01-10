@@ -37,8 +37,8 @@
   "devDependencies": {
     "@types/jest": "29.2.5",
     "@types/qs": "6.9.7",
-    "@typescript-eslint/eslint-plugin": "5.48.0",
-    "@typescript-eslint/parser": "5.48.0",
+    "@typescript-eslint/eslint-plugin": "5.48.1",
+    "@typescript-eslint/parser": "5.48.1",
     "coveralls": "3.1.1",
     "docsify-cli": "^4.4.4",
     "eslint": "8.31.0",
