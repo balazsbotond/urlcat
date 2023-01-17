@@ -44,11 +44,38 @@
   <img src="docs/urlcat-basic-usage-dark.svg#gh-dark-mode-only">
 </p>
 
-Features:
-- Friendly API
-- Only [one dependency](https://www.npmjs.com/package/qs)
-- 10.5KB [minified and gzipped](https://bundlephobia.com/package/urlcat@3.0.0)
-- TypeScript types provided
+### Features
+
+<center>
+  <table>
+  <thead>
+    <tr>
+      <th align="center"><strong>v3</strong></th>
+      <th align="center"><strong>v2</strong></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td align="center">Latest version</td>
+      <td align="center">Actively supported<br>legacy version</td>
+    </tr>
+    <tr>
+      <td align="center" colspan="2">The same friendly API</td>
+    </tr>
+    <tr>
+      <td align="center">Only <a href="https://www.npmjs.com/package/qs">one dependency</a></td>
+      <td align="center">No dependencies</td>
+    </tr>
+    <tr>
+      <td align="center">10.5KB <a href="https://bundlephobia.com/package/urlcat@3.0.0">minified and gzipped</a></td>
+      <td align="center">0.8KB <a href="https://bundlephobia.com/package/urlcat@2.0.4">minified and gzipped</a></td>
+    </tr>
+    <tr>
+      <td align="center" colspan="2">TypeScript types provided</td>
+    </tr>
+  </tbody>
+  </table>
+</center>
 
 ## Why?
 
