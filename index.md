@@ -1,6 +1,6 @@
 <h1 align="center">
   <br>
-  <img src="docs/cat.svg" alt="Markdownify">
+  <img src="cat.svg" alt="Markdownify">
   <br>
   urlcat
   <br>
@@ -40,8 +40,8 @@
 
 <br>
 <p align="center">
-  <img src="docs/urlcat-basic-usage.svg#gh-light-mode-only">
-  <img src="docs/urlcat-basic-usage-dark.svg#gh-dark-mode-only">
+  <img src="urlcat-basic-usage.svg#gh-light-mode-only">
+  <img src="urlcat-basic-usage-dark.svg#gh-dark-mode-only">
 </p>
 
 ### Features
