@@ -178,6 +178,15 @@
       "contributions": [
         "review"
       ]
+    },
+    {
+      "login": "alextes",
+      "name": "Alexander Tesfamichael",
+      "avatar_url": "https://avatars.githubusercontent.com/u/2011351?v=4",
+      "profile": "https://alextes.me/",
+      "contributions": [
+        "bug"
+      ]
     }
   ],
   "contributorsPerLine": 7,
@@ -186,5 +195,6 @@
   "projectOwner": "balazsbotond",
   "repoType": "github",
   "repoHost": "https://github.com",
-  "skipCi": true
+  "skipCi": true,
+  "commitConvention": "angular"
 }
