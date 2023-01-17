@@ -109,7 +109,7 @@ Currently, the package is distributed via npm. Zip downloads are also available 
 npm install --save urlcat
 ```
 
-### Usage with Node
+### Usage with Node (CommonJS/CJS)
 
 Node 14 and above are officially supported, though you may have luck using it with an earlier Node version.
 Since the code uses the `URL` and `URLSearchParams` classes internally, which aren't available below Node v10, the library is known not to work with those versions.
@@ -130,6 +130,28 @@ To use all exported functions:
 
 ```ts
 const { default: urlcat, query, subst, join } = require('urlcat');
+```
+
+### Usage with Node (ES Module)
+
+Starting with v3.1.0, urlcat supports ESM!
+
+To build full URLs (most common use case):
+
+```ts
+import urlcat from 'urlcat';
+```
+
+To use any of the utility functions:
+
+```ts
+import { query, subst, join } from 'urlcat';
+```
+
+To use all exported functions:
+
+```ts
+import urlcat, { query, subst, join } from 'urlcat';
 ```
 
 ### Usage with TypeScript
