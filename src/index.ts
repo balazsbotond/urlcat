@@ -260,15 +260,15 @@ export function join(part1: string, separator: string, part2: string): string {
     : p1 + separator + p2;
 }
 
-function removeNullOrUndef(params: ParamMap) {
-  return Object.keys(params)
-    .filter(k => notNullOrUndefined(params[k]))
-    .reduce((result, k) => {
-      result[k] = params[k];
+function removeNullOrUndef<P extends ParamMap>(params: P) {
+  return Object.entries(params).reduce((result, [key, value]) => {
+    if (nullOrUndefined(value)) {
       return result;
-    }, {} as ParamMap);
+    }
+    return Object.assign(result, { [key]: value });
+  }, {} as { [K in keyof P]: NonNullable<P[K]> });
 }
-
-function notNullOrUndefined(v: string) {
-  return v !== undefined && v !== null;
+ 
+function nullOrUndefined<T>(v: T) {
+  return v === undefined || v === null;
 }

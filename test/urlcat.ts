@@ -138,6 +138,18 @@ describe('urlcat', () => {
     expect(actual).toBe(expected);
   });
 
+  it('Ignores null query params', () => {
+    const expected = 'http://example.com/path?q=test';
+    const actual = urlcat('http://example.com/path', { p: null, q: 'test' });
+    expect(actual).toBe(expected);
+  });
+
+  it('Ignores undefined query params', () => {
+    const expected = 'http://example.com/path?q=test';
+    const actual = urlcat('http://example.com/path', { p: undefined, q: 'test' });
+    expect(actual).toBe(expected);
+  });
+
   it('Throws if a path param is an object', () => {
     expect(() => urlcat('http://example.com/path/:p', { p: {} }))
       .toThrowError('Path parameter p cannot be of type object. Allowed types are: boolean, string, number.');
