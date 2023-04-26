@@ -29,6 +29,7 @@
     "clean": "shx rm -rf dist",
     "prebuild": "npm run clean",
     "build": "tsup",
+    "postbuild": "cp dist/index.d.ts dist/index.d.mts",
     "test": "jest",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
     "coverage": "cat ./coverage/lcov.info | coveralls",
