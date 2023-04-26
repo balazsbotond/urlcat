@@ -11,8 +11,14 @@
   "types": "dist/index.d.ts",
   "exports": {
     ".": {
-      "import": "./dist/index.mjs",
-      "require": "./dist/index.js"
+      "import": {
+        "types": "./dist/index.d.mts",
+        "default": "./dist/index.mjs"
+      },
+      "require": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      }
     },
     "./package.json": "./package.json"
   },
@@ -23,6 +29,7 @@
     "clean": "shx rm -rf dist",
     "prebuild": "npm run clean",
     "build": "tsup",
+    "postbuild": "cp dist/index.d.ts dist/index.d.mts",
     "test": "jest",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
     "coverage": "cat ./coverage/lcov.info | coveralls",
