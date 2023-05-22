@@ -156,7 +156,7 @@ describe('urlcat', () => {
   });
 
   it('Throws if a path param is an array', () => {
-    expect(() => urlcat('http://example.com/path/:p/:q', { p: [] }))
+    expect(() => urlcat('http://example.com/path/:p/:q', { p: [], q:'' }))
       .toThrowError('Path parameter p cannot be of type object. Allowed types are: boolean, string, number.');
   });
 
