@@ -147,7 +147,7 @@ function urlcatImpl(
   const { renderedPath, remainingParams } = path(pathTemplate, params);
   const cleanParams = removeNullOrUndef(remainingParams);
   const renderedQuery = query(cleanParams, config);
-  const pathAndQuery = join(renderedPath, '?', renderedQuery);
+  const pathAndQuery = preparePathAndQuery(renderedPath, renderedQuery);
 
   return baseUrl ? joinFullUrl(renderedPath, baseUrl, pathAndQuery) : pathAndQuery;
 }
@@ -268,7 +268,14 @@ function removeNullOrUndef<P extends ParamMap>(params: P) {
     return Object.assign(result, { [key]: value });
   }, {} as { [K in keyof P]: NonNullable<P[K]> });
 }
- 
+
+function preparePathAndQuery(renderedPath: string, renderedQuery: string) {
+  const renderedPathCleanded = join(renderedPath, '?', '');
+  const delimiter = /\?/.test(renderedPathCleanded) ? '&' : '?';
+  const pathAndQuery = join(renderedPathCleanded, delimiter, renderedQuery);
+  return pathAndQuery;
+}
+
 function nullOrUndefined<T>(v: T) {
   return v === undefined || v === null;
 }
