@@ -1,7 +1,7 @@
 import qs, { IStringifyOptions } from 'qs';
-
+import { TemplateToken } from './TemplateToken';
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
-export type ParamMap = Record<string, any>;
+export type ParamMap<T extends string> = Record<TemplateToken<T>, any> & Partial<Record<Exclude<string,TemplateToken<T>>, any>>
 export type UrlCatConfiguration =
   Partial<Pick<IStringifyOptions, 'arrayFormat'> & { objectFormat: Partial<Pick<IStringifyOptions, 'format'>> }>
 
@@ -20,7 +20,7 @@ export type UrlCatConfiguration =
  * // -> 'http://api.example.com/users/42?search=foo
  * ```
  */
-export default function urlcat(baseTemplate: string, params: ParamMap): string;
+export default function urlcat<T extends string>(baseTemplate: T, params: ParamMap<T>): string;
 
 /**
  * Concatenates the base URL and the path specified using '/' as a separator.
@@ -58,10 +58,10 @@ export default function urlcat(baseUrl: string, path: string): string;
  * // -> 'http://api.example.com/users/42?search=foo
  * ```
  */
-export default function urlcat(
+export default function urlcat<T extends string>(
   baseUrl: string,
-  pathTemplate: string,
-  params: ParamMap
+  pathTemplate: T,
+  params: ParamMap<T>
 ): string;
 
 /**
@@ -84,17 +84,17 @@ export default function urlcat(
  * // -> 'http://api.example.com/users/42?search=foo
  * ```
  */
-export default function urlcat(
-  baseUrlOrTemplate: string,
-  pathTemplateOrParams: string | ParamMap,
-  maybeParams: ParamMap,
+export default function urlcat<T extends string>(
+  baseUrlOrTemplate: string| T,
+  pathTemplateOrParams: T | ParamMap<T>,
+  maybeParams: ParamMap<T>,
   config: UrlCatConfiguration
 ): string;
 
-export default function urlcat(
+export default function urlcat<T extends string>(
   baseUrlOrTemplate: string,
-  pathTemplateOrParams: string | ParamMap,
-  maybeParams: ParamMap = {},
+  pathTemplateOrParams: T | ParamMap<T>,
+  maybeParams: ParamMap<T> = {} as ParamMap<T>,
   config: UrlCatConfiguration = {}
 ): string {
   if (typeof pathTemplateOrParams === 'string') {
@@ -122,10 +122,10 @@ export default function urlcat(
  * ```
  */
 export function configure(rootConfig: UrlCatConfiguration) {
-  return (
+  return <T extends string>(
     baseUrlOrTemplate: string,
-    pathTemplateOrParams: string | ParamMap,
-    maybeParams: ParamMap = {}, config: UrlCatConfiguration = {}
+    pathTemplateOrParams: string | ParamMap<T>,
+    maybeParams: ParamMap<T> = {} as ParamMap<T>, config: UrlCatConfiguration = {}
   ): string =>
     urlcat(baseUrlOrTemplate, pathTemplateOrParams, maybeParams, { ...rootConfig, ...config });
 }
@@ -138,9 +138,9 @@ function joinFullUrl(renderedPath: string, baseUrl: string, pathAndQuery: string
   }
 }
 
-function urlcatImpl(
+function urlcatImpl<T extends string>(
   pathTemplate: string,
-  params: ParamMap,
+  params: ParamMap<T>,
   baseUrl: string | undefined,
   config: UrlCatConfiguration
 ) {
@@ -166,7 +166,7 @@ function urlcatImpl(
  * // -> 'id=42&search=foo'
  * ```
  */
-export function query(params: ParamMap, config?: UrlCatConfiguration): string {
+export function query<T extends string>(params: ParamMap<T>, config?: UrlCatConfiguration): string {
   /* NOTE: Handle quirk of `new UrlSearchParams(params).toString()` in Webkit 602.x.xx
    *       versions which returns stringified object when params is empty object
    */
@@ -196,16 +196,16 @@ export function query(params: ParamMap, config?: UrlCatConfiguration): string {
  * // -> '/users/42/posts/36'
  * ```
  */
-export function subst(template: string, params: ParamMap): string {
+export function subst<T extends string>(template: T, params: ParamMap<T >): string {
   const { renderedPath } = path(template, params);
   return renderedPath;
 }
 
-function path(template: string, params: ParamMap) {
-  const remainingParams = { ...params };
+function path<T extends string>(template: T, params: ParamMap<T>) {
+  const remainingParams: ParamMap<T> = { ...params };
 
   const renderedPath = template.replace(/:[_A-Za-z]+[_A-Za-z0-9]*/g, p => {  // do not replace "::"
-    const key = p.slice(1);
+    const key  = p.slice(1) as TemplateToken<T>;
     validatePathParam(params, key);
     delete remainingParams[key];
     return encodeURIComponent(params[key]);
@@ -214,7 +214,7 @@ function path(template: string, params: ParamMap) {
   return { renderedPath, remainingParams };
 }
 
-function validatePathParam(params: ParamMap, key: string) {
+function validatePathParam<T extends string>(params: ParamMap<T>, key: TemplateToken<T>) {
   const allowedTypes = ['boolean', 'string', 'number'];
 
   if (!Object.prototype.hasOwnProperty.call(params, key)) {
@@ -260,7 +260,7 @@ export function join(part1: string, separator: string, part2: string): string {
     : p1 + separator + p2;
 }
 
-function removeNullOrUndef<P extends ParamMap>(params: P) {
+function removeNullOrUndef<P extends ParamMap<T>,T extends string>(params: P) {
   return Object.entries(params).reduce((result, [key, value]) => {
     if (nullOrUndefined(value)) {
       return result;
