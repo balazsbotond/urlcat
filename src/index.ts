@@ -1,9 +1,9 @@
-import qs, { IStringifyOptions } from 'qs';
+import { stringify, StringifyOptions } from 'neoqs';
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export type ParamMap = Record<string, any>;
 export type UrlCatConfiguration =
-  Partial<Pick<IStringifyOptions, 'arrayFormat'> & { objectFormat: Partial<Pick<IStringifyOptions, 'format'>> }>
+  Partial<Pick<StringifyOptions, 'arrayFormat'> & { objectFormat: Partial<Pick<StringifyOptions, 'format'>> }>
 
 /**
  * Builds a URL using the base template and specified parameters.
@@ -174,12 +174,12 @@ export function query(params: ParamMap, config?: UrlCatConfiguration): string {
     return ''
   }
 
-  const qsConfiguration: IStringifyOptions = {
+  const qsConfiguration: StringifyOptions = {
     format: config?.objectFormat?.format ?? 'RFC1738', // RDC1738 is urlcat's current default. Breaking change if default is changed
     arrayFormat: config?.arrayFormat
   }
 
-  return qs.stringify(params, qsConfiguration);
+  return stringify(params, qsConfiguration);
 }
 
 /**
@@ -268,7 +268,7 @@ function removeNullOrUndef<P extends ParamMap>(params: P) {
     return Object.assign(result, { [key]: value });
   }, {} as { [K in keyof P]: NonNullable<P[K]> });
 }
- 
+
 function nullOrUndefined<T>(v: T) {
   return v === undefined || v === null;
 }
