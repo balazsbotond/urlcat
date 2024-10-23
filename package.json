@@ -43,14 +43,14 @@
     "qs": "^6.9.4"
   },
   "devDependencies": {
-    "@types/jest": "29.4.0",
+    "@types/jest": "29.5.14",
     "@types/qs": "6.9.7",
     "@typescript-eslint/eslint-plugin": "5.53.0",
     "@typescript-eslint/parser": "5.53.0",
     "coveralls": "3.1.1",
     "docsify-cli": "^4.4.4",
     "eslint": "8.34.0",
-    "jest": "29.4.3",
+    "jest": "29.7.0",
     "shx": "0.3.4",
     "ts-jest": "29.0.5",
     "tslint": "6.1.3",
