@@ -37,7 +37,7 @@
   "author": "Botond Balazs",
   "license": "MIT",
   "dependencies": {
-    "qs": "^6.9.4"
+    "qs": "^6.16.0"
   },
   "devDependencies": {
     "@eslint/js": "10.0.1",
