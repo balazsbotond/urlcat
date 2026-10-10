@@ -21,7 +21,7 @@
   ],
   "scripts": {
     "build": "tsup",
-    "test": "jest",
+    "test": "vitest run",
     "lint": "eslint .",
     "prepublish": "npm test && npm run build",
     "docs": "npx docsify-cli@5.0.0 serve docs --open"
@@ -41,14 +41,13 @@
   },
   "devDependencies": {
     "@eslint/js": "10.0.1",
-    "@types/jest": "30.0.0",
     "@types/qs": "6.15.1",
+    "@vitest/coverage-v8": "5.0.3",
     "eslint": "10.12.0",
     "globals": "17.13.0",
-    "jest": "30.5.2",
-    "ts-jest": "29.4.14",
     "tsup": "8.5.1",
     "typescript": "5.9.3",
-    "typescript-eslint": "8.71.0"
+    "typescript-eslint": "8.71.0",
+    "vitest": "5.0.3"
   }
 }
