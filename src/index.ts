@@ -2,8 +2,13 @@ import qs, { IStringifyOptions } from 'qs';
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export type ParamMap = Record<string, any>;
-export type UrlCatConfiguration =
-  Partial<Pick<IStringifyOptions, 'arrayFormat'> & { objectFormat: Partial<Pick<IStringifyOptions, 'format'>> }>
+// Spelled out instead of derived from IStringifyOptions so that the published
+// declarations do not depend on @types/qs. query() assigns these values to an
+// IStringifyOptions, so the build fails if the two drift apart.
+export type UrlCatConfiguration = {
+  arrayFormat?: 'indices' | 'brackets' | 'repeat' | 'comma' | undefined;
+  objectFormat?: { format?: 'RFC1738' | 'RFC3986' | undefined } | undefined;
+};
 
 /**
  * Builds a URL using the base template and specified parameters.

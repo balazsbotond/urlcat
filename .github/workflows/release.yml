@@ -1,0 +1,66 @@
+name: Release
+
+# Publishing a GitHub release (tag vX.Y.Z) stages that version on npm through
+# trusted publishing (OIDC): no npm token is stored anywhere. The staged
+# version only goes live once a maintainer approves it with 2FA on npmjs.com
+# or with "npm stage approve".
+
+on:
+  release:
+    types: [published]
+
+permissions:
+  contents: read
+
+jobs:
+  publish:
+    name: Stage on npm
+    runs-on: ubuntu-latest
+    environment:
+      name: npm
+      url: https://www.npmjs.com/package/urlcat
+    permissions:
+      contents: read
+      id-token: write # OIDC token for npm trusted publishing and provenance
+
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      # Node 24 ships npm 11.15+, which trusted publishing and staged
+      # publishing require. No dependency cache in the release job.
+      - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version: 24
+          registry-url: https://registry.npmjs.org
+          package-manager-cache: false
+
+      - name: Check that the tag matches package.json
+        env:
+          TAG: ${{ github.event.release.tag_name }}
+        run: |
+          version="$(node -p 'require("./package.json").version')"
+          if [ "$TAG" != "v$version" ]; then
+            echo "::error::Release tag $TAG does not match package.json version $version"
+            exit 1
+          fi
+
+      - name: Install dependencies
+        run: npm ci --ignore-scripts
+
+      - name: Lint
+        run: npm run lint
+
+      - name: Test
+        run: npm test
+
+      - name: Build
+        run: npm run build
+
+      - name: Check package exports and types
+        run: npm run check:package
+
+      # The checks above already cover prepublishOnly, so skip lifecycle scripts.
+      - name: Stage on npm
+        run: npm stage publish --provenance --ignore-scripts

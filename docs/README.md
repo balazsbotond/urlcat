@@ -9,8 +9,8 @@
 <h4 align="center">Build correct URLs easily.</h4>
 
 <p align="center">
-  <a href="https://travis-ci.com/balazsbotond/urlcat">
-    <img src="https://travis-ci.com/balazsbotond/urlcat.svg?branch=master"
+  <a href="https://github.com/balazsbotond/urlcat/actions/workflows/ci.yml">
+    <img src="https://github.com/balazsbotond/urlcat/actions/workflows/ci.yml/badge.svg"
          alt="Build Status">
   </a>
   <a href="https://www.npmjs.com/package/urlcat">
@@ -111,7 +111,7 @@ npm install --save urlcat
 
 ### Usage with Node
 
-Node 10 and above are officially supported. Since the code uses the `URL` and `URLSearchParams` classes internally, which aren't available below v10, we cannot support those versions.
+Node 14 and above are officially supported; CI checks the packed package on every even-numbered Node release line from 14 up to the current one.
 
 If you want to build full URLs (most common use case):
 
@@ -175,7 +175,7 @@ Contributions of any kind (pull requests, bug reports, feature requests, documen
 
 Building the project should be quick and easy. If it isn't, it's the maintainer's fault. Please report any problems with building in a GitHub issue.
 
-You need to have a reasonably recent version of node.js to build *urlcat*. My node version is 12.18.3, npm is at 6.14.6.
+You need Node.js 22.12 or later to build *urlcat* and run its tests (the version in `.nvmrc` is the one used for development). The published package itself runs on Node 14 and above.
 
 First, clone the git repository:
 

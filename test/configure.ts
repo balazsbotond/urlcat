@@ -1,3 +1,4 @@
+import { describe, expect, it } from 'vitest';
 import { configure } from '../src';
 
 describe('configure', () => {

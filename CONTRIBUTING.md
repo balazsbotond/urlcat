@@ -6,7 +6,7 @@ Contributions of any kind (pull requests, bug reports, feature requests, documen
 
 Building the project should be quick and easy. If it isn't, it's the maintainer's fault. Please report any problems with building in a GitHub issue.
 
-You need to have a reasonably recent version of node.js to build *urlcat*. My node version is 12.18.3, npm is at 6.14.6.
+You need Node.js 22.12 or later to build *urlcat* and run its tests (the version in `.nvmrc` is the one used for development). The published package itself runs on Node 14 and above.
 
 First, clone the git repository:
 

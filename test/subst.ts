@@ -1,3 +1,4 @@
+import { describe, expect, it } from 'vitest';
 import { subst } from '../src';
 
 describe('subst', () => {
@@ -52,17 +53,17 @@ describe('subst', () => {
 
   it('Throws if a param is an array', () => {
     expect(() => subst(':p', { p: [] }))
-      .toThrowError('Path parameter p cannot be of type object. Allowed types are: boolean, string, number.');
+      .toThrow('Path parameter p cannot be of type object. Allowed types are: boolean, string, number.');
   });
 
   it('Throws if a param is an object', () => {
     expect(() => subst(':p', { p: {} }))
-      .toThrowError('Path parameter p cannot be of type object. Allowed types are: boolean, string, number.');
+      .toThrow('Path parameter p cannot be of type object. Allowed types are: boolean, string, number.');
   });
 
   it('Throws if a param is a symbol', () => {
     expect(() => subst(':p', { p: Symbol() }))
-      .toThrowError('Path parameter p cannot be of type symbol. Allowed types are: boolean, string, number.');
+      .toThrow('Path parameter p cannot be of type symbol. Allowed types are: boolean, string, number.');
   });
 
   it('Throws if a param is missing', () => {

@@ -138,8 +138,7 @@ npm install --save urlcat
 
 ### Usage with Node (CommonJS/CJS)
 
-Node 14 and above are officially supported, though you may have luck using it with an earlier Node version.
-Since the code uses the `URL` and `URLSearchParams` classes internally, which aren't available below Node v10, the library is known not to work with those versions.
+Node 14 and above are officially supported; CI checks the packed package on every even-numbered Node release line from 14 up to the current one.
 
 To build full URLs (most common use case):
 
@@ -323,8 +322,7 @@ Contributions of any kind (pull requests, bug reports, feature requests, documen
 
 Building the project should be quick and easy. If it isn't, it's the maintainer's fault. Please report any problems with building in a GitHub issue.
 
-You need to have a reasonably recent version of node.js to build *urlcat*. 
-Tested on node version 12.18.3 and npm version 6.14.6.
+You need Node.js 22.12 or later to build *urlcat* and run its tests (the version in `.nvmrc` is the one used for development). The published package itself runs on Node 14 and above.
 
 First, clone the git repository:
 
