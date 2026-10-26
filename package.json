@@ -50,13 +50,13 @@
     "@arethetypeswrong/cli": "0.18.5",
     "@eslint/js": "10.0.1",
     "@types/qs": "6.15.1",
-    "@vitest/coverage-v8": "5.0.3",
-    "eslint": "10.12.0",
+    "@vitest/coverage-v8": "5.0.5",
+    "eslint": "10.13.0",
     "globals": "17.13.0",
     "publint": "0.3.25",
     "tsup": "8.5.1",
     "typescript": "5.9.3",
-    "typescript-eslint": "8.71.0",
-    "vitest": "5.0.3"
+    "typescript-eslint": "8.72.0",
+    "vitest": "5.0.5"
   }
 }
